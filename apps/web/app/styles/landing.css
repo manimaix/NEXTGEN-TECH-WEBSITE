@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Anybody";
-  src: url("/fonts/anybody-bold.ttf") format("truetype");
+  src: url("../assets/anybody-bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;

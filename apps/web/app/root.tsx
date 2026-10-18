@@ -28,7 +28,11 @@ export function Layout({ children }: { children: ReactNode }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#ffffff" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link
+          rel="icon"
+          type="image/svg+xml"
+          href={`${import.meta.env.BASE_URL}favicon.svg`}
+        />
         <meta name="robots" content="noindex, nofollow" />
         <Meta />
         <Links />
@@ -83,7 +87,7 @@ export function ErrorBoundary() {
         Your submitted enquiry may still have been received. Return to the form
         to retry the same attempt, or explore our services.
       </p>
-      <a className="button" href="/">
+      <a className="button" href={import.meta.env.BASE_URL}>
         Back to home
       </a>
     </div>

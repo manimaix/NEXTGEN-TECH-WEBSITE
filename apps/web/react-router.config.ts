@@ -1,6 +1,10 @@
 import type { Config } from "@react-router/dev/config";
+
+const basename = process.env.GITHUB_PAGES_BASE ?? "/";
+
 export default {
   ssr: false,
+  basename,
   prerender: [
     "/",
     "/services",

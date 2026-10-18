@@ -15,6 +15,12 @@ import {
 
 const defaults = imageSlots.map((slot) => defaultImage(slot.id));
 const ImagesContext = createContext<SiteImage[]>(defaults);
+
+function staticAssetUrl(src: string) {
+  if (!src.startsWith("/images/")) return src;
+  return `${import.meta.env.BASE_URL}images/${src.slice("/images/".length)}`;
+}
+
 export function SiteImagesProvider({ children }: { children: ReactNode }) {
   const [images, setImages] = useState(defaults);
   const { pathname } = useLocation();
@@ -61,8 +67,9 @@ export function SitePhoto({
 }) {
   const photo = useSiteImage(slot);
   const definition = imageSlots.find((item) => item.id === slot)!;
+  const imageSrc = staticAssetUrl(photo.src);
   const [failed, setFailed] = useState(false);
-  useEffect(() => setFailed(false), [photo.src]);
+  useEffect(() => setFailed(false), [imageSrc]);
   return (
     <figure className={`site-photo ${className}`}>
       <div
@@ -75,7 +82,7 @@ export function SitePhoto({
           </span>
         ) : (
           <img
-            src={photo.src}
+            src={imageSrc}
             alt={photo.alt}
             width={photo.width}
             height={photo.height}
