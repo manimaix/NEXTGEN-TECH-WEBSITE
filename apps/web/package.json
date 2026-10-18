@@ -1,0 +1,1 @@
+{"name":"@nextgen/web","private":true,"type":"module","scripts":{"dev":"react-router dev","build":"react-router build"},"dependencies":{"@react-router/node":"^7.18.4","isbot":"^5.2.2"}}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nextgen Tech — page design gallery</title>
+<style>
+*{box-sizing:border-box}body{margin:0;color:#1d1d1f;background:#f5f5f7;font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:white;border-bottom:1px solid #dedee2;padding:24px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px}h1{font-size:24px;letter-spacing:-.02em;margin:0;font-weight:600}p{margin:4px 0 0;color:#616165}header a,a{color:#0066cc;text-underline-offset:4px}
+main{max-width:1760px;margin:0 auto;padding:24px 32px 56px}.toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:18px}.toolbar label{font-weight:600}.toolbar select{min-width:270px;max-width:100%}
+button,select,.open{font:inherit;color:inherit;background:white;border:1px solid #c8c8cd;border-radius:8px;padding:10px 16px;min-height:44px}
+button{cursor:pointer;transition:background-color 120ms ease,transform 120ms cubic-bezier(.23,1,.32,1)}button:active{transform:scale(.98)}button:disabled{opacity:.4;cursor:default}
+:focus-visible{outline:3px solid #0066cc;outline-offset:3px}.open{margin-left:auto;color:#0066cc;text-decoration:none}
+figure{margin:0;background:white}#hero{width:100%;height:auto;display:block;aspect-ratio:16/9}figcaption{padding:14px 18px;border:1px solid #dedee2;border-top:0;display:flex;justify-content:space-between;gap:16px}
+.caption-note{font-size:14px;color:#616165}.gallery{margin-top:32px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.thumbnail{padding:0;text-align:left;overflow:hidden;border-radius:8px;min-width:0}.thumbnail img{display:block;width:100%;height:auto;aspect-ratio:16/9}.thumbnail span{display:block;padding:10px 12px;font-size:13px}.thumbnail[aria-current=true]{outline:2px solid #0066cc;outline-offset:2px}
+.notes{font-size:14px;color:#616165;margin-top:28px;max-width:900px}.notes p{margin-top:10px}.notes a{margin-right:16px}
+@media(max-width:850px){header{padding:20px;align-items:flex-start;flex-direction:column}main{padding:20px}.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.open{margin-left:0}figcaption{flex-direction:column;gap:2px}}@media(max-width:480px){.gallery{grid-template-columns:1fr}.toolbar select{width:100%;min-width:0}}@media(prefers-reduced-motion:reduce){button{transition:none}button:active{transform:none}}
+</style>
+</head>
+<body>
+<header><div><h1>Nextgen Tech — page designs</h1><p>16 labelled desktop concepts · 1920 × 1080 PNG exports</p></div><a href="README.md">Design notes and page index</a></header>
+<main>
+<div class="toolbar"><label for="page">Page</label><select id="page"><option value="0">01 — Home  /</option>
+<option value="1">02 — Services  /services</option>
+<option value="2">03 — Technology consulting  /services/consulting</option>
+<option value="3">04 — Application development  /services/application-development</option>
+<option value="4">05 — AI agents &amp; integration  /services/ai-agents-integration</option>
+<option value="5">06 — AI training  /training</option>
+<option value="6">07 — About Nextgen Tech  /about</option>
+<option value="7">08 — Project enquiry  /contact</option>
+<option value="8">09 — Enquiry acknowledgement  /thank-you</option>
+<option value="9">10 — Privacy information  /privacy</option>
+<option value="10">11 — Website information  /terms</option>
+<option value="11">12 — Page not found  /404</option>
+<option value="12">13 — Staff access  /admin</option>
+<option value="13">14 — Enquiry workspace  /admin/enquiries</option>
+<option value="14">15 — Enquiry detail  /admin/enquiries/NG-DEMO-001</option>
+<option value="15">16 — Notification status  /admin/notifications</option></select><button id="prev" aria-label="Previous page">Previous</button><button id="next" aria-label="Next page">Next</button><a class="open" id="full" href="01-home.png" target="_blank" rel="noopener">Open full-size PNG</a></div>
+<figure><img id="hero" src="01-home.png" width="1920" height="1080" alt="Nextgen Tech home page concept"><figcaption><span id="label">01 — Home /</span><span class="caption-note">Static concept · Website code is unchanged</span></figcaption></figure>
+<div class="gallery" aria-label="All page designs"><button class="thumbnail" data-page="0" aria-label="View 01 — Home  /"><img loading="lazy" src="01-home.png" width="1920" height="1080" alt=""><span>01 — Home  /</span></button>
+<button class="thumbnail" data-page="1" aria-label="View 02 — Services  /services"><img loading="lazy" src="02-services.png" width="1920" height="1080" alt=""><span>02 — Services  /services</span></button>
+<button class="thumbnail" data-page="2" aria-label="View 03 — Technology consulting  /services/consulting"><img loading="lazy" src="03-consulting.png" width="1920" height="1080" alt=""><span>03 — Technology consulting  /services/consulting</span></button>
+<button class="thumbnail" data-page="3" aria-label="View 04 — Application development  /services/application-development"><img loading="lazy" src="04-application-development.png" width="1920" height="1080" alt=""><span>04 — Application development  /services/application-development</span></button>
+<button class="thumbnail" data-page="4" aria-label="View 05 — AI agents &amp; integration  /services/ai-agents-integration"><img loading="lazy" src="05-ai-integration.png" width="1920" height="1080" alt=""><span>05 — AI agents &amp; integration  /services/ai-agents-integration</span></button>
+<button class="thumbnail" data-page="5" aria-label="View 06 — AI training  /training"><img loading="lazy" src="06-training.png" width="1920" height="1080" alt=""><span>06 — AI training  /training</span></button>
+<button class="thumbnail" data-page="6" aria-label="View 07 — About Nextgen Tech  /about"><img loading="lazy" src="07-about.png" width="1920" height="1080" alt=""><span>07 — About Nextgen Tech  /about</span></button>
+<button class="thumbnail" data-page="7" aria-label="View 08 — Project enquiry  /contact"><img loading="lazy" src="08-contact.png" width="1920" height="1080" alt=""><span>08 — Project enquiry  /contact</span></button>
+<button class="thumbnail" data-page="8" aria-label="View 09 — Enquiry acknowledgement  /thank-you"><img loading="lazy" src="09-enquiry-recorded.png" width="1920" height="1080" alt=""><span>09 — Enquiry acknowledgement  /thank-you</span></button>
+<button class="thumbnail" data-page="9" aria-label="View 10 — Privacy information  /privacy"><img loading="lazy" src="10-privacy.png" width="1920" height="1080" alt=""><span>10 — Privacy information  /privacy</span></button>
+<button class="thumbnail" data-page="10" aria-label="View 11 — Website information  /terms"><img loading="lazy" src="11-website-information.png" width="1920" height="1080" alt=""><span>11 — Website information  /terms</span></button>
+<button class="thumbnail" data-page="11" aria-label="View 12 — Page not found  /404"><img loading="lazy" src="12-page-not-found.png" width="1920" height="1080" alt=""><span>12 — Page not found  /404</span></button>
+<button class="thumbnail" data-page="12" aria-label="View 13 — Staff access  /admin"><img loading="lazy" src="13-staff-access.png" width="1920" height="1080" alt=""><span>13 — Staff access  /admin</span></button>
+<button class="thumbnail" data-page="13" aria-label="View 14 — Enquiry workspace  /admin/enquiries"><img loading="lazy" src="14-enquiry-workspace.png" width="1920" height="1080" alt=""><span>14 — Enquiry workspace  /admin/enquiries</span></button>
+<button class="thumbnail" data-page="14" aria-label="View 15 — Enquiry detail  /admin/enquiries/NG-DEMO-001"><img loading="lazy" src="15-enquiry-detail.png" width="1920" height="1080" alt=""><span>15 — Enquiry detail  /admin/enquiries/NG-DEMO-001</span></button>
+<button class="thumbnail" data-page="15" aria-label="View 16 — Notification status  /admin/notifications"><img loading="lazy" src="16-notification-status.png" width="1920" height="1080" alt=""><span>16 — Notification status  /admin/notifications</span></button></div>
+<div class="notes"><p>Generated with built-in ImageGen, guided by Impeccable and Emil's design engineering principles. The established Apple-inspired Nextgen Tech design direction governs colour, typography and components.</p><p>The image generator returned native 1672 × 941 images. Final files are mechanically resampled to the requested 1920 × 1080; native originals are retained in the native folder. These are compact desktop page concepts, not full long-scroll screenshots. Staff records and acknowledgement references are synthetic; information-page text is draft content.</p><p><a href="generation-manifest.json">Exact prompts and provenance</a><a href="README.md">Page index</a></p></div>
+</main>
+<script>
+const pages=[{"id":"01-home","label":"01 — Home  /","file":"01-home.png","kind":"public"},{"id":"02-services","label":"02 — Services  /services","file":"02-services.png","kind":"public"},{"id":"03-consulting","label":"03 — Technology consulting  /services/consulting","file":"03-consulting.png","kind":"public"},{"id":"04-application-development","label":"04 — Application development  /services/application-development","file":"04-application-development.png","kind":"public"},{"id":"05-ai-integration","label":"05 — AI agents & integration  /services/ai-agents-integration","file":"05-ai-integration.png","kind":"public"},{"id":"06-training","label":"06 — AI training  /training","file":"06-training.png","kind":"public"},{"id":"07-about","label":"07 — About Nextgen Tech  /about","file":"07-about.png","kind":"public"},{"id":"08-contact","label":"08 — Project enquiry  /contact","file":"08-contact.png","kind":"public"},{"id":"09-enquiry-recorded","label":"09 — Enquiry acknowledgement  /thank-you","file":"09-enquiry-recorded.png","kind":"public"},{"id":"10-privacy","label":"10 — Privacy information  /privacy","file":"10-privacy.png","kind":"public"},{"id":"11-website-information","label":"11 — Website information  /terms","file":"11-website-information.png","kind":"public"},{"id":"12-page-not-found","label":"12 — Page not found  /404","file":"12-page-not-found.png","kind":"public"},{"id":"13-staff-access","label":"13 — Staff access  /admin","file":"13-staff-access.png","kind":"admin"},{"id":"14-enquiry-workspace","label":"14 — Enquiry workspace  /admin/enquiries","file":"14-enquiry-workspace.png","kind":"admin"},{"id":"15-enquiry-detail","label":"15 — Enquiry detail  /admin/enquiries/NG-DEMO-001","file":"15-enquiry-detail.png","kind":"admin"},{"id":"16-notification-status","label":"16 — Notification status  /admin/notifications","file":"16-notification-status.png","kind":"admin"}];
+const select=document.getElementById('page'),hero=document.getElementById('hero'),label=document.getElementById('label'),full=document.getElementById('full'),prev=document.getElementById('prev'),next=document.getElementById('next');
+let current=0;
+function show(index){current=Math.max(0,Math.min(pages.length-1,index));const page=pages[current];select.value=String(current);hero.src=page.file;hero.alt=page.label+' — Nextgen Tech static page design';label.textContent=page.label;full.href=page.file;prev.disabled=current===0;next.disabled=current===pages.length-1;document.querySelectorAll('[data-page]').forEach(button=>button.setAttribute('aria-current',String(Number(button.dataset.page)===current)));history.replaceState(null,'','#'+page.id);}
+select.addEventListener('change',()=>show(Number(select.value)));prev.addEventListener('click',()=>show(current-1));next.addEventListener('click',()=>show(current+1));document.querySelectorAll('[data-page]').forEach(button=>button.addEventListener('click',()=>{show(Number(button.dataset.page));document.querySelector('.toolbar').scrollIntoView({block:'start'});}));
+document.addEventListener('keydown',event=>{if(['SELECT','INPUT','TEXTAREA'].includes(event.target.tagName))return;if(event.key==='ArrowRight'){event.preventDefault();show(current+1)}if(event.key==='ArrowLeft'){event.preventDefault();show(current-1)}});
+const requested=pages.findIndex(page=>page.id===location.hash.slice(1));show(requested<0?0:requested);
+</script></body></html>

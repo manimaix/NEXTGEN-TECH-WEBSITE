@@ -1,0 +1,797 @@
+NEXTGEN TECH SDN BHD
+WEBSITE FRONTEND, BACKEND, DESIGN AND DELIVERY BRIEF
+Version: 1.0 | Prepared: 21 September 2026 | Business owner: Ryan
+Status: Proposed website specification. No application has been built in this folder.
+
+READ THIS FIRST
+==============
+Create a professional website for the business Ryan is currently operating,
+Nextgen Tech Sdn Bhd. Explain what the company can help with and make it easy for
+a potential client to submit a useful consulting, development, AI or training enquiry.
+
+Confirmed service areas from Ryan:
+1. Technology and business-systems consulting.
+2. Application development.
+3. AI agent deployment and integration.
+4. AI training.
+
+Everything else below is a proposed implementation choice unless explicitly marked
+as confirmed. Client names, company registration details, address, phone, email,
+certifications, project results, team size, training accreditation, prices and
+delivery timelines have not been supplied. Never invent them to complete a layout.
+
+The existing Vite starter in the parent workspace is an early visual prototype.
+It currently has a brief landing page, Manrope/DM Mono typography and a warm neutral/
+violet palette. Its hello@nextgen.tech address is unverified placeholder content.
+Neither that address nor any implied domain ownership is approved business data.
+The parent's DESIGN.md and design-system.md differ in fonts and colours; they are
+historical drafts. This brief proposes one coherent direction for the new website.
+Do not merge both token sets. Confirm actual company brand assets when supplied.
+
+Planning defaults:
+- Public, responsive marketing website; no compulsory visitor account.
+- Primary market: Malaysian businesses; geographic service limits to be confirmed.
+- English first, with a Bahasa Malaysia route structure ready for translated content.
+- Main conversion: send a project/training enquiry. Meeting booking is optional later.
+- React + TypeScript with a Vite-based framework build and pre-rendered public pages.
+- Small Node.js/TypeScript enquiry API and PostgreSQL; add CMS/admin features in phases.
+- Maintain professional, specific language and show actual work or labelled examples.
+
+CONTENTS
+========
+01 Business positioning, audiences and conversion
+02 Sitemap and navigation
+03 Page-by-page frontend specification
+04 Design system and interaction instructions
+05 Frontend architecture, content and SEO
+06 Backend features and lead operations
+07 Data model and API contracts
+08 Security, integrations and operations
+09 Implementation phases and acceptance criteria
+10 Content checklist, builder handoff and references
+
+01. BUSINESS POSITIONING, AUDIENCES AND CONVERSION
+=================================================
+Proposed positioning:
+"Practical technology consulting, custom applications and AI implementation for
+businesses that need systems they can use and maintain."
+
+The website must answer within its first screen:
+- Who is this? Nextgen Tech Sdn Bhd.
+- What does it do? Consulting, application development, AI agents/integration, AI training.
+- How can the visitor proceed? Explore a service or describe the project.
+
+Primary audiences and what each needs:
+Business owner/SME operator: understand a practical outcome, scope and how to start.
+Operations manager: understand workflow integration, staff adoption and support.
+Technical decision-maker: see delivery practices, access controls and handover approach.
+HR/L&D/training coordinator: see learning outcomes, audience level and training format.
+Early-stage founder: understand product discovery, MVP development and iteration.
+These audience groups are planning assumptions, not claims about current customers.
+
+One main site-wide action: "Discuss your project".
+Service-specific actions: "Discuss consulting", "Plan an application",
+"Discuss an AI workflow" and "Enquire about training".
+All route to the enquiry form with editable service context. Avoid five competing
+buttons in one section or forcing visitors into a booking tool before they understand.
+
+Proposed success measures:
+- Qualified enquiries by service, with useful problem descriptions.
+- Enquiry completion rate and form error/drop-off rate.
+- Movement from service page to enquiry, and follow-up status internally.
+- Case-study engagement where approved studies exist.
+- Training enquiries from appropriate audiences.
+Pageviews and time-on-site are secondary; do not optimise for a longer journey.
+No targets, ROI claims or response-time promises should be published without evidence.
+
+Public website is not a SaaS dashboard, client portal, LMS or online store at launch.
+Those may be separate future projects. Avoid unnecessary accounts and checkout flows.
+
+02. SITEMAP AND NAVIGATION
+=========================
+Launch routes:
+/                                      Home
+/services                              Service overview
+/services/consulting                   Consulting
+/services/application-development      Application development
+/services/ai-agents-integration        AI agent deployment and integration
+/training                              AI training
+/about                                 Company and delivery approach
+/contact                               Project/training enquiry
+/privacy                               Approved privacy notice
+/terms                                 Approved website terms, if applicable
+/thank-you                             Enquiry acknowledgement; noindex
+/404                                   Useful not-found page with correct HTTP status
+
+Add only when real content or operating capability exists:
+/work                                  Approved work/case-study index
+/work/:slug                            Approved individual case study
+/insights                              Useful articles and guides
+/insights/:slug                         Article
+/training/:slug                        Individual course/workshop offering
+/book                                  Scheduling entry point
+/admin                                 Restricted enquiry/content operations
+
+Navigation on wide screens:
+Brand/home, Services, Training, About, Contact, and "Discuss your project".
+Add Work and Insights when the respective sections have useful published content.
+Services dropdown lists the three service detail routes and an explicit link to
+training as the fourth pillar; /services presents all four without double-counting.
+No empty Work page filled with logos or fictional client stories.
+
+Mobile navigation:
+Compact brand and labelled menu button; drawer or simple overlay with full text links.
+Escape closes it, keyboard focus is contained/restored, body scroll is managed, and
+selecting a route closes it. Keep contact access clear without covering content.
+Footer repeats core services, approved business contact, legal pages and actual
+social profiles. Full legal company name must be easy to find.
+
+03. PAGE-BY-PAGE FRONTEND SPECIFICATION
+=====================================
+HOME /
+Purpose: communicate the offer and help visitors choose their next step.
+
+Section 1 - first viewport
+Desktop: contained header, two-column opening within a 1200 px content grid.
+Left seven columns: company name/identifier, direct headline, two-sentence service
+summary, primary enquiry action and a secondary "Explore our services" text link.
+Right five columns: an interactive service finder using four readable options;
+the selected option shows a business need, typical deliverable and next action.
+This uses genuine service descriptions, not fictional live project metrics.
+Mobile: headline and primary action first; service finder follows in normal flow.
+No full-screen animation, autoplay video, or giant empty hero that hides the offer.
+
+Proposed headline: "Build the systems your business needs next."
+Proposed supporting copy: "Nextgen Tech Sdn Bhd provides technology consulting,
+custom application development, AI agent deployment and integration, and practical
+AI training. Tell us what your team needs to improve."
+Treat this as draft copy for Ryan's review, not a third-party endorsement.
+
+Service finder options and indicative outcomes:
+"Clarify a technology plan" -> scoped assessment and implementation roadmap.
+"Build an application" -> defined product workflow and a working application release.
+"Connect AI to a workflow" -> scoped agent/integration with controls and monitoring.
+"Train a team in AI" -> workshop aligned with participant roles and learning goals.
+These describe proposed service deliverables; do not promise fixed packages/prices.
+The control should work as accessible tabs or a labelled radio group. Selection
+updates the panel and enquiry context; all services remain available as normal links.
+
+Section 2 - four services
+Use four numbered editorial rows with service name, problem it addresses, sample
+deliverables and detail link. Avoid identical icon cards with interchangeable copy.
+Examples must be marked as possible engagements until Ryan confirms each scope.
+
+Section 3 - how an engagement works
+Discover -> define -> build/integrate -> test/train -> hand over/support.
+For each step show what the client contributes and what they receive. This is a
+proposed working process, not a guarantee that every project includes every service.
+
+Section 4 - work or demonstration
+If approved client work exists, feature one or two case studies with accurate context.
+Otherwise show an original capability demonstration labelled "Illustrative example".
+Example: a sample operations request being reviewed and routed, with clearly synthetic
+data. Do not present a planned product as a completed client delivery.
+Makanlah can appear only when Ryan confirms its relationship/status and publication.
+
+Section 5 - practical delivery commitments
+Explain scoping, testing, access control, documentation and handover using commitments
+Ryan can actually support. Replace unapproved guarantees with topics to discuss.
+Do not add ISO, Microsoft, AWS, OpenAI or training accreditation badges without proof.
+
+Section 6 - training invitation
+Who the training suits, what participants should be able to do, and a training enquiry
+action. Do not invent upcoming dates, seat counts, course fees or certifications.
+
+Section 7 - concise FAQ and closing action
+Topics: how to begin, existing system integration, project scope, training audience,
+ongoing support arrangements and ownership/handover discussion.
+Keep contract-specific promises out of generic answers. Close with "Tell us what
+you want to improve" and the same main enquiry action.
+
+SERVICES /services
+Purpose: compare the four areas without requiring technical knowledge.
+Use a concise intro, four service sections, appropriate engagement examples and a
+"Not sure where to start?" enquiry route. Explain that consulting may precede a build
+and that training may accompany an implementation; do not force a bundled purchase.
+Comparison content: suitable need, likely output, client inputs and next step.
+Do not publish fixed timelines/budgets unless an actual approved package exists.
+
+CONSULTING /services/consulting
+Audience: owners and teams unsure what to build, replace or connect.
+Sections in order:
+1. Clear outcome and enquiry CTA.
+2. Problems: disconnected systems, repeated manual work, unclear product scope.
+3. Proposed engagements: workflow assessment, product discovery, architecture review,
+   AI opportunity assessment and implementation planning.
+4. Deliverables to agree: findings, prioritised options, risks, scope and roadmap.
+5. Client inputs: current process, systems, constraints and decision participants.
+6. Engagement process and relevant approved proof/labelled sample report.
+7. FAQ and contextual contact CTA.
+Avoid promising a quantified saving before assessing the actual process.
+
+APPLICATION DEVELOPMENT /services/application-development
+Audience: teams needing a new application or an improvement to existing software.
+Describe web applications, internal tools, portals and integrations only as capabilities
+Ryan confirms. Clarify mobile/native offerings before advertising them specifically.
+Sections: business problem -> discovery/prototype -> implementation -> testing ->
+deployment -> documentation/handover -> support options.
+Show example deliverable categories: requirements, UX flows, application, API,
+deployment instructions and handover documentation. Final deliverables belong in scope.
+Explain how existing systems and phased releases can be handled. No claim of support
+for every language/platform or unconditional fixed-price delivery.
+
+AI AGENTS /services/ai-agents-integration
+Purpose: explain what practical AI implementation involves in business terms.
+First explain an agent as software that can use configured knowledge and permitted
+tools to help with a defined workflow. Avoid suggesting unconstrained autonomy.
+Possible use cases: internal knowledge retrieval, support triage, document processing,
+drafting workflows and bounded system updates after required approval.
+Each example states input, output, integration needs, human review and limitation.
+
+Explain proposed delivery stages:
+- Identify a narrow workflow and measurable evaluation cases.
+- Connect approved data with access controls and source tracking.
+- Configure tools with limited permissions and approval for consequential actions.
+- Evaluate output quality, failure modes, cost and response time.
+- Deploy to an agreed environment and monitor with a fallback/escalation route.
+- Document ownership, model/provider dependencies, updates and operational support.
+Actual customer deployments need separate architecture/security assessment; this
+website should not imply a universal compliance or accuracy guarantee.
+
+Signature content: a simple interactive use-case selector changing the displayed
+input/output/review requirements. If no backend AI exists, label it an illustrative
+walkthrough. Do not fake streamed model output, live connector access or business data.
+Include questions about existing software and data sensitivity in the enquiry context,
+but never ask visitors to paste credentials or confidential documents into the form.
+
+TRAINING /training
+Purpose: help a manager or individual identify appropriate AI learning support.
+Proposed tracks, subject to Ryan's actual curriculum:
+- AI essentials for business users.
+- Effective prompting and output verification in daily work.
+- Practical workflow automation and responsible AI use.
+- Technical agent/integration workshops for development teams.
+For each: intended audience, prerequisites, learning outcomes, format and enquiry link.
+Formats to confirm: private team workshop, hands-on session, remote or in-person.
+Ask for team size range, current experience, desired topics, location and preferred dates.
+Use "Request a training plan" until public course dates and commercial terms exist.
+Do not claim HRD Corp eligibility, accredited certificates, partner status or fixed
+duration without documented approval. Distinguish attendance from accredited credentials.
+
+Later /training/:slug template:
+Overview, outcomes, syllabus, prerequisites, trainer bio with consent, format,
+actual session dates/timezone, published fee if approved, availability and cancellation
+terms. If cohort enrolment/payment is introduced, build genuine capacity/payment logic.
+MVP enquiry must not masquerade as a confirmed seat reservation.
+
+ABOUT /about
+Show full company name, its focus, approach, and accurate background provided by Ryan.
+Use an approved founder/team story and real photographs with consent when available.
+Explain how the company collaborates with clients and handles delivery/handover.
+Company registration details/address/contact are controlled content fields; do not
+generate plausible-looking values. Only publish accurate, approved business information.
+Avoid invented founding date, headcount, office locations, awards or company history.
+
+WORK /work and /work/:slug (content-gated)
+Index: filter by actual service types; descriptive titles and permission-approved images.
+Detail: client/context, initial problem, company role, scope, approach, shipped work,
+constraints, result evidence, dates and related service CTA.
+Metrics need measurement method, period and approval. An anonymous case study still
+requires permission and must not indirectly reveal a confidential client.
+Where outcomes are qualitative, say so. Demo/prototype status is visible in index and detail.
+
+INSIGHTS /insights and /insights/:slug (later)
+Useful explanatory articles, implementation lessons and training guides.
+Index uses topic filters and readable summaries. Article uses author, updated date,
+headings, optional table of contents, code/examples if helpful and related service link.
+No filler articles solely for search keywords. Technical claims need dated references.
+Provide editorial review, link checks and draft preview before publishing.
+
+CONTACT /contact
+Heading: "Tell us what you want to build or improve."
+Form fields:
+Required: name, email, service interest, short project/training description.
+Optional: company, role, phone, budget band including "Not sure", desired timeframe.
+Training selection reveals audience/team-size range, topics and delivery preference.
+AI selection optionally asks existing systems and a broad data-sensitivity category.
+Do not require a business email domain; legitimate small clients may use personal email.
+Description guidance: do not include passwords, personal records or confidential files.
+
+Validation: name 2-120 characters, normal email parsing, description 30-5,000 characters,
+server-validated service enum and bounded optional values. These are proposed limits.
+Privacy acknowledgement links to the approved notice; marketing consent is separate,
+optional and unchecked. Final legal wording must reflect the real processing purpose.
+No document attachment at launch. Add secure uploads only if a clear business need appears.
+
+States: idle, validating, submitting, accepted, field error, rate limited, offline,
+and uncertain network result. Preserve entered text on recoverable errors within the
+current page session; avoid persisting lead personal data in localStorage by default.
+Success means the backend stored the enquiry. Display a reference code and a modest
+acknowledgement; do not claim an email arrived or a meeting was booked.
+A retry reuses the idempotency key so a slow response cannot create duplicate leads.
+Offer an approved alternative contact channel when available, without invented addresses.
+
+THANK-YOU /thank-you
+Noindex, no personal data in URL. Show safe acknowledgement and next-step description.
+Direct navigation without submission shows a generic message with contact link;
+it must not imply a new enquiry was actually received.
+
+LEGAL AND ERROR PAGES
+Privacy/terms content must match actual collection, cookies, third parties and services.
+Provide effective date, contact method and clear reading structure.
+404 gives helpful service/contact links and true 404 status. A service outage page
+does not suggest enquiries succeeded; show recovery options and retained field values.
+
+04. DESIGN SYSTEM AND INTERACTION INSTRUCTIONS
+=============================================
+Proposed direction: a clear, precise technology company identity with warm neutral
+surfaces, dark text and a controlled violet accent. Continue the starter's recognisable
+direction while making the company's specific services and real work carry the design.
+Public pages primarily Persuade; long case studies/articles Read; admin Operate.
+
+Proposed tokens, superseding conflicting draft values only when implemented here:
+Canvas           #F4F3EF  quiet page background
+Surface          #FFFFFF  focused content and input surfaces
+Text             #22212B  primary reading colour
+Secondary text   #605E69  supporting text, readable at normal sizes
+Primary          #5145CD  primary action/link; test actual text/background pairs
+Primary hover    #4036A8  pointer hover/active state
+Primary subtle   #EEEBFF  selected service panel or subtle callout
+Border subtle    #D8D5E0  decorative division
+Control border   #777380  visible form boundaries
+Success          #216344  form acceptance with text/icon
+Danger           #B42318  validation/failure with text/icon
+Focus ring       #5145CD  visible outline with offset on light surfaces
+Inverse surface  #252334  at most selected bands/footer, with appropriate light text
+Never use low-contrast light grey for essential service explanations or form help.
+
+Typography:
+Manrope remains the proposed primary family to preserve the existing starter identity.
+Use 400/500/600/700, self-host licensed WOFF2, font-display: swap and metric-aware fallback.
+DM Mono may be used sparingly for actual technical metadata; never for all body copy.
+Desktop hero 56-76 px, line height 1.05-1.12, letter spacing around -0.035em.
+Mobile hero 36-46 px, line height 1.1-1.2. Body 16-18 px, line height 1.55-1.7.
+Section heading 28-44 px; labels 14-16 px; avoid tiny uppercase technical eyebrows.
+Keep paragraphs around 55-75 characters per line. Long service titles wrap naturally.
+Do not reproduce the starter's extremely tight -0.09em tracking across the full site.
+
+Layout:
+- Shared maximum width 1200 px; hero may use up to 1280 px if composition needs it.
+- Gutters: 20 px small phones, 24 px tablets, 40-48 px on wider screens.
+- Twelve-column desktop grid; content-defined layout collapse around 900-1024 px.
+- Mobile sections 48-64 px vertical space, desktop 80-112 px where appropriate.
+- More space above a section heading than between heading and its explanation.
+- Use editorial rows for services, a real image/screen for work, and readable lists
+  for deliverables. Reserve cards for content that benefits from a grouped boundary.
+- Avoid horizontal scrolling except intentionally accessible content such as a code block.
+
+Component inventory:
+SiteHeader, DesktopServiceMenu, MobileNav, SiteFooter, Container, SectionHeading,
+PrimaryButton, TextLink, ServiceFinder, ServiceRow, DeliverableList, ProcessSteps,
+CaseStudyTeaser, CaseStudyTemplate, EvidenceCaption, TrainingTrack, ArticleLayout,
+FAQDisclosure, ContactForm, ConditionalFields, FormErrorSummary, EnquirySuccess,
+EmptyContentState, ImageWithCaption, StatusNotice and admin DataTable/DetailPanel.
+Use variants for emphasis and state; do not create unrelated page-specific controls.
+All components define default, hover where relevant, focus, active, disabled, pending,
+error and success behaviour. Disabled controls have an accessible explanation if needed.
+
+Motion, following Emil Kowalski's interaction guidance:
+- Purpose is feedback or continuity, never a delay before reading content.
+- Pointer press scale around 0.98 over 120 ms; focus remains steady and obvious.
+- Service panel switch: optional 140-180 ms opacity, no large content slide.
+- Menu/popover: 160-220 ms transform/opacity from trigger origin.
+- Modal: small opacity/scale entry with focus handling; no scale(0).
+- Use cubic-bezier(0.23, 1, 0.32, 1) for responsive entry and explicit property lists.
+- Frequent keyboard-triggered actions remain immediate; no artificial reveal delay.
+- Hover styling gated to suitable pointers. Reduced motion removes transforms and
+  decorative transitions; content must be visible even before animation initialisation.
+- No scroll hijacking, custom cursor, mandatory loading intro or parallax-heavy hero.
+
+Accessibility target: WCAG 2.2 AA; test rather than claiming certification.
+Provide semantic landmarks, one meaningful h1, logical heading order, skip link,
+keyboard menus, focus restoration, readable contrast and labelled form controls.
+Prefer 44 px or larger touch targets; test 200% zoom, reflow and error announcements.
+Accordion questions are real buttons with expanded state; essential service content
+is not hidden behind mouse-only interactions. Do not place text inside images.
+
+Visual assets:
+Use approved company identity and real work images when available. A temporary text
+wordmark is acceptable in a prototype and must not be presented as an approved logo.
+Use original product screens or labelled illustrative demonstrations for technical work.
+Avoid generic humanoid robots, glowing AI brains and stock photos implying fake staff.
+Do not reveal client data in screenshots. Keep consent/source records for all assets.
+No invented trust logos, five-star testimonials, customer counters or results badges.
+
+05. FRONTEND ARCHITECTURE, CONTENT AND SEO
+========================================
+Recommended target during implementation:
+React + TypeScript + React Router framework mode using its Vite build integration.
+Pre-render public marketing routes, with ssr:false where static hosting is selected.
+This creates usable HTML at build time; a separate API handles enquiries/admin data.
+It is an explicit evolution of the existing vanilla Vite starter, not a capability
+already installed. Check current framework/Node requirements and pin compatible versions.
+Official pre-rendering reference is linked at the end of this document.
+
+Proposed implementation structure:
+  apps/web/app/root.tsx                  site shell and route-level defaults
+  apps/web/app/routes/                   page modules
+  apps/web/app/components/               shared UI and page sections
+  apps/web/app/features/contact/         form logic, validation and API client
+  apps/web/app/features/service-finder/  scoped interactive service selection
+  apps/web/app/styles/                   tokens, global styles and component styles
+  apps/web/content/                      typed service/company/article content
+  apps/web/public/                       approved static assets only
+  apps/api/src/modules/leads/            enquiry intake and follow-up operations
+  apps/api/src/modules/admin/            protected staff operations
+  apps/api/src/modules/notifications/    retryable email delivery
+  packages/contracts/                   shared request/response schemas
+  docs/                                 content inventory, deployment and QA records
+Folders are a target plan; do not treat this outline as existing application code.
+
+Implementation principles:
+Build reusable page templates from typed content rather than duplicating markup.
+Keep service data in structured objects: title, slug, audience, problem, outcomes,
+deliverables, process, FAQs, related work and CTA context.
+Use local state for menus/tabs, URL state for shareable filters and server state only
+for live API data. A marketing website does not need a large global state store.
+Use accessible headless primitives selectively; match the project's actual visual tokens.
+CSS variables + CSS modules are sufficient; do not add competing UI themes.
+
+Rendering and deployment:
+Enumerate dynamic case-study/article slugs in the pre-render build. Rebuild on content
+publication; keep the previous valid deployment if a build fails. Do not put private
+draft content, enquiry records or secret CMS tokens into generated HTML/data files.
+Admin stays authenticated client/server functionality and is never pre-rendered with data.
+Serve generated routes directly, with hosting rules for route data and static assets.
+Configure a real 404 fallback; avoid returning the homepage with status 200 for all paths.
+Do not read window/localStorage during build-time rendering; browser behaviour begins
+after hydration. Verify no hydration errors and that primary reading works without JS.
+
+Content management stages:
+Stage 1: validated TypeScript/JSON/Markdown content in source control, edited through
+the development workflow. The website can launch without a custom CMS.
+Stage 2: editor-friendly CMS with drafts, preview, versioning, media and publication.
+Use a controlled build trigger for public content updates; do not publish an unreviewed
+draft because a webhook arrived. Track content state separately from deployment state.
+Choose one source of truth per content type; do not keep competing database/static copies.
+
+SEO and discoverability:
+Each route has a distinct accurate title/description, canonical URL, social preview,
+logical headings and descriptive links. Final domain must be confirmed first.
+Generate sitemap.xml from published, canonical routes and an intentional robots.txt.
+Structured data describes only verified organisation/service/article facts. Do not
+invent AggregateRating, awards, addresses, opening times or a LocalBusiness office.
+Private/admin/thank-you/search-preview routes are excluded from indexing as appropriate.
+When BM content exists, implement locale URLs, translated metadata, language links and
+hreflang; do not auto-publish an unreviewed translation of technical/legal commitments.
+
+Performance targets, not measured results:
+LCP <= 2.5 s, INP <= 200 ms and CLS <= 0.1 at the 75th percentile where field data is
+available. Use lab checks before launch and field monitoring once traffic exists.
+Initial public-route JavaScript budget: aim below 180 KB gzip; explain exceptions.
+Use responsive AVIF/WebP images with dimensions; prioritise only the actual hero asset,
+lazy-load below-the-fold images, subset fonts and avoid a third-party widget waterfall.
+Code-split admin and optional interactive demonstrations. A visible service explanation
+must not depend on a slow analytics, chat, font or scheduling provider.
+
+06. BACKEND FEATURES AND LEAD OPERATIONS
+======================================
+Launch backend scope: reliable enquiry intake, durable lead storage, abuse protection,
+notification delivery and an authorised way for Ryan/staff to follow up.
+Do not create a large CRM or public account system before validating need.
+
+LEAD INTAKE
+Validate all fields server-side; record service interest and optional structured answers.
+Apply request size limits, basic honeypot/time checks and rate limiting. Add a challenge
+only if abuse warrants it; keep an accessible alternative and avoid silent loss of
+legitimate enquiries sharing an office IP.
+Use an idempotency key scoped to submission token/session and payload hash. Repeated
+requests return the same reference; a key reused for different content yields conflict.
+Do not suppress every future enquiry from the same email; repeat business is valid.
+
+Within one database transaction, create lead and notification outbox job.
+Return success after durable storage, without waiting for an external email provider.
+Worker sends staff notification and optional acknowledgement; retries with backoff,
+records provider IDs/status and exposes permanently failed delivery to operations.
+Escaping and safe email templates prevent header/HTML injection. Visitor address may
+be used as validated Reply-To, not a forged From domain.
+The staff inbox/lead database is the source of truth; an email outage must not lose leads.
+
+LEAD WORKFLOW
+Statuses: new -> triaged -> contacted -> qualified -> proposal -> won/lost/closed.
+Allow disqualified/spam with reason; allow controlled reopening. Each change records
+actor, timestamp and reason, with a version guard against concurrent updates.
+Fields: owner, service interest, contact details, description, optional qualification
+fields, internal notes, next action and follow-up date. No automated outreach beyond
+the acknowledgement until a business process is explicitly configured.
+Lead priority is a human workflow aid. Do not infer protected traits, scrape personal
+profiles or generate an opaque "client worth" score.
+
+ADMIN MVP
+Roles: owner/admin and lead manager; content editor later. Roles are server-enforced.
+Require login and MFA for privileged access. No shared hardcoded admin password.
+Screens: lead list with filters/search, lead detail, notes/status/follow-up controls,
+notification failures and audit history. Paginate; avoid loading the whole database.
+Bulk export restricted and audited; spreadsheet exports must neutralise formula injection.
+Show private records only after authorisation; hiding the /admin link is not protection.
+
+CONTENT/CMS LATER
+Company profile, service pages, case studies, training programmes, articles, FAQs,
+navigation, media and SEO fields. Draft -> in_review -> approved -> published -> archived.
+Record author/reviewer/version. Preview requires authentication or expiring signed access.
+Publication triggers a bounded rebuild; show published-content version versus live-build
+version and keep the prior release on failure. Removal invalidates the public build/cache.
+Role permissions distinguish editing from approving/publishing legal or company claims.
+
+TRAINING ENQUIRIES
+Use the same lead pipeline with training-specific fields and consent record.
+Private workshop enquiry does not reserve seats or accept payment.
+Later cohort registration needs programme/session/capacity records, expiring seat
+holds, idempotent registration, confirmation and cancellation workflow. Add payments
+only after approved prices and terms; provider confirmation must govern enrolment state.
+
+BOOKING INTEGRATION LATER
+Prefer an accessible link to the selected scheduling service before loading a heavy
+embed. Confirm account ownership, working hours, timezone and privacy implications.
+Signed provider events can update an appointment linked to the lead. Handle booking,
+reschedule and cancellation separately and deduplicate retries. Clicking "Book" is
+not proof of a confirmed meeting; record conversion only after actual confirmation.
+
+OPTIONAL AI ASSISTANT LATER
+Not required for the website launch. If justified, restrict answers to approved site
+content, show source links, mark uncertainty and offer a human enquiry route.
+No access to private leads/customer documents; no autonomous quoting, purchasing,
+emailing or contract promises. Rate/budget limits, redacted logging and human handoff.
+Describe actual deployment status; a service advertisement does not require a live chatbot.
+
+07. DATA MODEL AND API CONTRACTS
+===============================
+Launch entities:
+users: staff identity reference, email, status, MFA/session metadata as appropriate.
+roles/user_roles: server-side administrative permissions.
+leads: reference, name, email, company/phone optional, service, message, source,
+       status, owner, optional qualification JSON, created_at, updated_at, version.
+lead_consents: purpose, notice version, consent/acknowledgement value and timestamp.
+lead_notes: lead_id, author_id, text, timestamps; internal only.
+lead_status_events: previous/new status, actor, reason and timestamp.
+submission_keys: key hash, payload hash, lead reference and expiry.
+notification_jobs: lead_id, kind, payload reference, status, attempts, next_attempt_at.
+notification_deliveries: provider ID, delivery state, timestamps and safe error code.
+audit_events: actor, action, object, timestamp and appropriately redacted change summary.
+
+Later entities:
+company_profiles, service_pages, case_studies, testimonials_with_permissions,
+training_programmes, training_sessions, training_registrations, articles, tags,
+media_assets, content_versions, publication_jobs and appointment_events.
+Do not store a testimonial without provenance/permission and approval status.
+
+Constraints:
+- Unique enquiry reference and scoped idempotency key.
+- Checked service/status values; database foreign keys for leads/notes/owners.
+- Index lead created_at, status, service, owner, and due follow-up dates.
+- Store UTC timestamps; render training/booking times in an explicit timezone.
+- Version-check concurrent edits; maintain append-only status/audit records.
+- Separate staff authentication data from public content projections.
+- Define retention/deletion workflows before launch; avoid indefinite raw request logs.
+
+API prefix /api/v1; JSON envelope {data,meta}; errors
+{error:{code,message,fields,requestId}}. Use bounded pagination and request IDs.
+
+POST /enquiries
+Public, validated, rate-limited and idempotent.
+Input: name, email, service, message, optional company/phone/budget/timeframe,
+training/AI qualification fields, privacyNoticeVersion, optional marketingConsent,
+submissionToken and idempotency header. Never accept client-defined owner/status.
+Output 201: {data:{reference,status:"received"}}; matching retry returns stored result.
+422 for field errors; 429 with retry guidance; 409 for key/payload mismatch.
+Do not expose whether a submitted email already appears in the lead database.
+
+GET /health
+Public minimal liveness only; no database credentials/configuration details.
+Internal readiness endpoint checks required services for deployment/monitoring.
+
+GET /admin/leads
+Lead manager/admin, paginated filtered projection.
+GET /admin/leads/:id
+Authorised staff only; full lead plus notes/history.
+PATCH /admin/leads/:id
+Authorised staff; allowlisted fields, expected version, audit event.
+POST /admin/leads/:id/notes
+Authorised staff; bounded plain text; never silently exposed to visitor.
+POST /admin/leads/export
+Explicit permission; bounded export job, expiring download, audit entry.
+GET /admin/notifications/failures
+Authorised operator; safe delivery errors without full provider secrets/payloads.
+POST /admin/notifications/:id/retry
+Authorised operator; idempotent, no duplicate successful deliveries.
+
+Later:
+POST /webhooks/email       provider signature, duplicate-event protection
+POST /webhooks/booking     provider signature, lead/appointment scope
+POST /admin/content       content editor; creates draft only
+POST /admin/content/:id/publish  publisher permission; approved version + build job
+POST /training/enquiries   optional alias to the same validated lead intake service
+
+Keep public status lookups private: no GET /enquiries/:reference exposing contact data.
+A reference is for communication, not a bearer credential to the entire lead record.
+Avoid dynamic content endpoints until a CMS is selected; static content can ship in HTML.
+
+08. SECURITY, INTEGRATIONS AND OPERATIONS
+=======================================
+Separate web assets, API, PostgreSQL and email provider credentials. Serve behind TLS
+with restricted CORS and secure cookie/CSRF settings for the chosen auth arrangement.
+Parameterised queries, server validation, output escaping, restrictive security headers,
+rate limits and appropriate session expiration/revocation.
+VITE_* variables are public browser configuration; no mail key/database URL belongs there.
+Use secret storage or deployment environment variables for server credentials.
+
+Data minimisation:
+Collect only what helps answer the enquiry. No ID card/passport upload, confidential
+project archive, model API key or client database required to initiate a conversation.
+Analytics must not include form message, name, email, phone or private lead identifiers.
+Do not send typed form content to session replay tools. Disable replay on contact/admin.
+Marketing opt-in remains separate and revocable. Final privacy/cookie/retention choices
+must be reviewed against actual business practices and applicable Malaysian requirements;
+this planning document does not provide a legal compliance certification.
+
+Third-party integrations:
+Transactional email is the only required external integration at launch.
+DNS sender authentication and a verified sending identity must be configured for the
+approved company domain. Provider account and destination inbox remain open decisions.
+WhatsApp is optional: show it only after Ryan confirms the business number. Use an
+ordinary outbound link with a non-sensitive editable message; no unsolicited sending.
+Maps optional: an address link is enough if an approved visitable office exists.
+CRM sync optional: durable outbox/retries, scoped credentials and explicit data mapping.
+Scheduling optional: booking confirmation handled as described above.
+Analytics optional: choose purpose and consent handling before adding tags.
+Do not load every integration on every route.
+
+Analytics event plan:
+service_view(service_slug), service_finder_select(service_slug),
+contact_start(source_route,service_slug), contact_validation_error(field_code),
+enquiry_received(service_slug), training_enquiry_received, outbound_contact_click.
+Use coarse categories and aggregated metrics; deduplicate enquiry conversions from
+the server acceptance event, not every visit to /thank-you.
+Internal lead stages support sales reporting with restricted access; avoid public
+dashboards implying business results not yet recorded.
+
+Deployment/maintenance plan:
+- Separate development/staging/production; staging has noindex plus access restriction
+  when it contains private drafts. robots.txt alone is not access control.
+- CDN/static host for pre-rendered web output; managed API runtime and database.
+- Build/check/test in CI, apply reviewed migrations, deploy API compatible with the
+  current frontend, then release static assets; retain rollbackable prior versions.
+- Keep dependency lockfiles, reviewed updates, environment templates and backups.
+- Monitor enquiry error rate, worker backlog, failed notifications, server errors and
+  public uptime; redact personal fields from monitoring payloads.
+- Test restore and manual follow-up from the lead database if email delivery fails.
+- Document who receives incidents and who updates services/contact/legal content.
+- Never serve the development Vite server as the production website.
+
+09. IMPLEMENTATION PHASES AND ACCEPTANCE CRITERIA
+===============================================
+Phase 0 - confirm content and foundations
+Collect verified business identity/contact, actual service scope, approved branding,
+available work samples and training topics. Build content models and a route inventory.
+Exit: all public facts have a source or are explicitly marked not ready for publication.
+
+Phase 1 - frontend foundation
+Create the application in this nextgen tech website folder when implementation is
+requested. Reuse the parent's prototype only as an inspected starting reference;
+do not move/delete it or copy node_modules into the new folder as part of planning.
+Set up TypeScript, pre-render routing, tokens, responsive header/footer and primitives.
+Build Home, Services, three service detail pages, Training, About and Contact.
+Use approved content or clearly labelled development placeholders.
+Exit: all planned core routes render, navigation works, and mobile structure is complete.
+
+Phase 2 - frontend conversion and quality
+Implement service finder, contextual enquiry form, validation, page states, legal/error
+templates, metadata, sitemap, approved imagery and language-ready content structure.
+Mock API failures openly during development; do not label mock submission as real.
+Exit: page-by-page responsive/keyboard inspection and useful generated HTML without JS.
+
+Phase 3 - reliable enquiries
+Implement API/database intake, spam controls, idempotency, outbox/email, staff access,
+lead list/detail/status/notes and operational error visibility.
+Exit: enquiry persists, staff can access it, duplicate retries create one record, and
+email-provider failure does not lose it or produce a false delivery claim.
+
+Phase 4 - release preparation
+Replace/remove all unverified placeholders, finalise notices, configure real domain/
+inbox and monitoring, run security/accessibility/performance checks and restore test.
+Exit: owner reviews actual public content, complete enquiry journey and limitations.
+Publishing is a separate action; this brief does not deploy the site.
+
+Phase 5 - content and service growth
+Add approved case studies/articles, CMS, BM translation, scheduling and richer training
+pages as actual content/operations become available. Add AI assistant only for a
+validated visitor need. Avoid a CMS/LMS/portal expansion by default.
+
+Acceptance scenarios:
+N01 First-time visitor can identify company, four services and next action immediately.
+N02 Service finder works by keyboard and normal service links work without its JS.
+N03 Every service CTA preselects the correct editable enquiry interest.
+N04 Mobile menu opens/closes predictably and restores focus without trapping the user.
+N05 Forms announce errors, preserve input and distinguish pending from received.
+N06 Double submit/network retry produces one lead and one intended acknowledgement.
+N07 Email provider outage: lead remains in database, notification retries/alerts visible.
+N08 Visitor/unauthorised user cannot access admin leads, notes or export URLs.
+N09 Fabricated registration numbers, addresses, logos, testimonials and metrics absent.
+N10 A demonstration is labelled; no simulated AI response is represented as live service.
+N11 Long service headings, BM copy samples and 200% zoom remain readable.
+N12 Public route HTML includes actual service content and correct metadata before hydration.
+N13 Dynamic published slugs are generated; missing pages return a real 404.
+N14 No contact form personal data appears in analytics, URLs or client error logs.
+N15 Training enquiry acknowledgement does not imply seat/payment confirmation.
+N16 Header/footer contact methods use Ryan-approved destinations only.
+N17 Content publication failure preserves the last valid public release.
+N18 Reduced-motion preference removes decorative movement; focus and feedback remain clear.
+N19 Database restoration preserves lead history and does not resend completed email jobs.
+N20 Secret scanning/build inspection finds no private API/database/email credentials.
+
+Verification plan:
+Type checks, build/pre-render checks and schema validation for all published content.
+Focused integration tests for enquiry persistence, idempotency, roles and worker retry.
+End-to-end service-to-enquiry and staff follow-up flows, including offline/error cases.
+Manual desktop/mobile, keyboard, screen reader, zoom and reduced-motion inspection.
+Use measured performance reports; distinguish lab numbers from real user field metrics.
+Do not claim a build success verifies conversion, accessibility, privacy or backend delivery.
+
+10. CONTENT CHECKLIST, BUILDER HANDOFF AND REFERENCES
+===================================================
+Information Ryan/business operations must supply before publication:
+- Approved legal company display name and required registration information.
+- Actual business domain, enquiry email, phone/WhatsApp and address if published.
+- Logo/assets and any confirmed brand guidelines.
+- Precise scope/capabilities of each service, delivery/support arrangements.
+- Approved founder/team background and image permissions.
+- Case studies/screenshots, client permission and evidence for any metrics.
+- Actual training programmes, trainer details, formats and any genuine accreditation.
+- Approved privacy/terms wording, enquiry retention and staff access responsibilities.
+- Transactional email/scheduling/hosting accounts as required; never place credentials
+  in this brief or frontend source control.
+No case studies or testimonials is a valid launch state; explain the process and
+show clearly labelled capabilities instead of manufacturing social proof.
+
+Builder instructions:
+1. Treat this file as the complete planning brief for Nextgen Tech's business website.
+2. Implement only the currently requested phase. Keep future features explicit.
+3. Maintain one local source of truth for tokens and structured service content.
+4. Use the installed Impeccable guidance for hierarchy, surface purpose, content truth
+   and bounded visual checks; use Emil's guidance for precise, purposeful interaction.
+5. Confirm unknown business facts at their publication boundary. Use visible placeholders
+   in development; omit optional unready sections in production.
+6. Finish one genuine enquiry path before adding decorative features or optional tooling.
+7. Inspect the rendered result at mobile and desktop sizes; record what actually ran.
+8. Deliver README, safe .env.example, schema/migrations, test/build commands, content
+   editing guide, API documentation and deployment/rollback instructions with the code.
+9. Create a local DESIGN.md describing the implemented system at build completion.
+   This TXT proposes the design; it does not claim a rendered website is already approved.
+
+Key unresolved choices with current defaults:
+Framework: proposed React Router framework/Vite for pre-rendered React pages.
+Contact: enquiry form primary; approved email/WhatsApp links secondary when provided.
+Content editing: source-controlled files first; CMS later if editors need one.
+Languages: English launch; reviewed BM content later, using locale-ready structure.
+Training: enquiries first; no seats/payments without a defined course operation.
+Work: publish only authorised real studies, otherwise clearly labelled demonstrations.
+These defaults allow the frontend prototype and sandbox enquiry flow to proceed.
+
+Design references:
+- Installed Impeccable skill: purposeful surface design, clear evidence and consistent
+  components. The optional engine was unavailable; guidance and existing project
+  files were read directly for this planning deliverable.
+- Installed emil-design-eng skill: short purposeful animation, press feedback,
+  interruptibility, anchored popovers and accessible motion choices.
+- https://github.com/voltagent/awesome-design-md
+  Used for the design-document structure (theme, tokens, typography, components,
+  layout, states and responsive rules), not as an approved Nextgen brand identity.
+
+Technical references checked on 21 September 2026:
+- https://vite.dev/guide/ : development/build tooling and version compatibility checks.
+- https://reactrouter.com/how-to/pre-rendering : build-time public page generation,
+  explicit dynamic route paths and static deployment with ssr:false.
+- https://www.w3.org/WAI/WCAG22/quickref/ : accessibility criteria and testing reference.
+
+All proposed layouts, copy, architecture, phases and operational targets are planning
+recommendations. No client results, partnerships or live website performance are asserted.

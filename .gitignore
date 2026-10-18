@@ -1,0 +1,14 @@
+node_modules/
+.data/
+.env
+.env.*
+!.env.example
+apps/web/build/
+apps/web/.react-router/
+output/
+.impeccable/review/
+.impeccable/config.local.json
+*.log
+.playwright-cli/
+.DS_Store
+Thumbs.db

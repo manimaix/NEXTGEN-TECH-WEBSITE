@@ -1,0 +1,1047 @@
+/* Public routes inherit the approved homepage. Staff screens retain their own styles. */
+.public-world {
+  --text: var(--ink);
+  --border: var(--rule);
+  --action-soft: var(--mint);
+  --action-hover: var(--green-dark);
+  --on-action: var(--paper);
+  --control-border: #6b806c;
+  --danger: #9b2d24;
+  --surface: var(--paper);
+  --canvas: var(--paper);
+  --radius-control: 6px;
+}
+.public-world #main {
+  min-height: 55vh;
+}
+.public-wrap,
+.public-world .container {
+  width: calc(100% - clamp(40px, 6.67vw, 160px));
+  max-width: 1280px;
+  margin-inline: auto;
+}
+.public-world h1 {
+  font-size: clamp(40px, 4.5vw, 64px);
+  line-height: 1.08;
+  max-width: 20ch;
+  text-wrap: balance;
+}
+.public-world h2 {
+  font-size: clamp(28px, 2.8vw, 40px);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+.public-world h3 {
+  font-size: 22px;
+  line-height: 1.3;
+}
+.public-world p {
+  max-width: 68ch;
+}
+.public-world h1 > span {
+  color: var(--green);
+}
+.public-section {
+  padding-block: 64px;
+}
+.public-band {
+  padding-block: 64px;
+}
+.public-band-green {
+  background: var(--green);
+  color: var(--paper);
+}
+.public-band-green h1 > span {
+  color: var(--yellow);
+}
+.public-band-mint {
+  background: var(--mint);
+}
+.public-band-yellow {
+  background: var(--yellow);
+}
+.public-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: start;
+}
+.public-split > div > p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+.public-split > div > p + p {
+  margin-top: 18px;
+}
+.public-split .public-text-link {
+  margin-top: 22px;
+}
+.public-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 44px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.public-text-link > svg,
+.public-world .landing-button > svg {
+  flex-shrink: 0;
+}
+.public-band-green .public-text-link {
+  color: var(--yellow);
+}
+.public-world .public-note {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--muted);
+  margin-top: 22px;
+}
+.public-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.public-section-head p {
+  color: var(--muted);
+  font-size: 14px;
+}
+.landing-desktop-nav a[aria-current="page"],
+.landing-mobile-menu a[aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* A browsable directory, with the actual scope beside each service. */
+.public-directory-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+  padding-block: 64px 52px;
+}
+.public-directory-intro > div > p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+.public-directory-intro .public-text-link {
+  margin-top: 18px;
+}
+.public-directory {
+  padding-bottom: 64px;
+}
+.public-service-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.75fr);
+  gap: 16px 80px;
+  padding-block: 32px;
+  border-top: 1px solid var(--rule);
+}
+.public-service-row:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+.public-world .public-service-row h2 {
+  font-size: clamp(26px, 2.7vw, 36px);
+}
+.public-service-row h2 a {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: baseline;
+}
+.public-service-row h2 svg {
+  flex-shrink: 0;
+}
+.public-service-row p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-top: 16px;
+  max-width: 55ch;
+}
+.public-service-row ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-self: center;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.public-service-row li {
+  padding-block: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+.public-service-row li:first-child {
+  padding-top: 0;
+}
+.public-service-row > .public-text-link {
+  grid-column: 2;
+  justify-self: start;
+}
+
+/* Service detail pages make the scope, inputs and next step easy to find. */
+.public-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  min-height: 56px;
+  padding-block: 6px;
+  font-size: 13px;
+}
+.public-breadcrumb a {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  min-height: 44px;
+}
+.public-breadcrumb > span:last-child {
+  color: var(--muted);
+}
+.public-service-hero .public-split {
+  align-items: center;
+}
+.public-service-hero .landing-button {
+  margin-top: 28px;
+}
+.public-service-statement {
+  padding-block: 8px;
+}
+.public-world .public-service-statement p:first-child {
+  font-size: 22px;
+  line-height: 1.6;
+}
+.public-world .public-service-statement p:last-child {
+  font-size: 14px;
+  color: #d7e8d6;
+  border-top: 1px solid #589b7f;
+  padding-top: 22px;
+  margin-top: 28px;
+}
+.public-scope-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  padding-bottom: 40px;
+}
+.public-scope-intro p {
+  font-size: 17px;
+  line-height: 1.75;
+}
+.public-scope {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  padding-bottom: 64px;
+}
+.public-scope > div {
+  border-top: 1px solid var(--rule);
+  padding-top: 28px;
+}
+.public-world .public-scope h2 {
+  font-family: "Manrope", sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.public-scope ul {
+  padding: 0;
+  list-style: none;
+  margin: 24px 0 0;
+}
+.public-scope li {
+  padding-block: 14px;
+  border-bottom: 1px solid var(--rule);
+  font-size: 16px;
+  line-height: 1.6;
+}
+.public-demo-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1fr);
+  gap: 64px;
+  align-items: center;
+}
+.public-demo-layout > div > p {
+  margin-top: 24px;
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 38ch;
+}
+.public-demo-layout > .work-demo {
+  grid-area: auto;
+  min-width: 0;
+}
+.public-related {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+}
+.public-related > div {
+  border-top: 1px solid var(--rule);
+}
+.public-related a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 68px;
+  padding-block: 18px;
+  border-bottom: 1px solid var(--rule);
+  font-size: 18px;
+  font-weight: 600;
+}
+.public-related svg {
+  flex-shrink: 0;
+}
+.public-faq {
+  display: grid;
+  grid-template-columns: 0.7fr 1fr;
+  gap: 72px;
+}
+.public-faq details {
+  border-top: 1px solid var(--rule);
+}
+.public-faq details:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+.public-faq summary,
+.public-course summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 68px;
+  padding-block: 20px;
+  font-size: 15px;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+.public-faq summary::-webkit-details-marker,
+.public-course summary::-webkit-details-marker {
+  display: none;
+}
+.public-faq summary svg,
+.public-course summary svg {
+  flex-shrink: 0;
+}
+.public-faq details[open] svg,
+.public-course details[open] svg {
+  transform: rotate(45deg);
+}
+.public-faq details > p {
+  padding: 0 36px 24px 0;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+/* Training has its own yellow opening and an honest, replaceable course slot. */
+.public-training-hero {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+.public-training-hero .landing-button {
+  margin-top: 28px;
+  background: var(--green-dark);
+  color: var(--paper);
+}
+.public-world .public-training-offer h2 {
+  font-family: "Manrope", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+.public-training-offer p {
+  font-size: 17px;
+  margin: 18px 0 12px;
+  line-height: 1.7;
+}
+.public-course {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 28px 64px;
+  padding: 32px;
+  background: var(--mint);
+  border-radius: 12px;
+}
+.public-world .public-course-name h3 {
+  font-family: "Anybody", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+}
+.public-course-name p {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 8px;
+}
+.public-course dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.public-course dt {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+.public-course dd {
+  margin: 0;
+  font-size: 15px;
+}
+.public-course > details {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--rule);
+}
+.public-course details p {
+  padding-bottom: 12px;
+  font-size: 16px;
+}
+.public-training-plan ol {
+  list-style: none;
+  padding: 0;
+  margin: 36px 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+  counter-reset: training-step;
+}
+.public-training-plan li {
+  border-top: 1px solid var(--rule);
+  padding-top: 24px;
+  counter-increment: training-step;
+}
+.public-training-plan h3::before {
+  content: counter(training-step) ". ";
+  color: var(--green);
+}
+.public-world .public-training-plan h3 {
+  font-size: 18px;
+}
+.public-training-plan p {
+  margin-top: 14px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.public-training-plan + .public-faq {
+  padding-top: 0;
+}
+
+/* About shows how an engagement works, without invented company history. */
+.public-about-hero {
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  gap: 96px;
+  align-items: center;
+}
+.public-about-hero > div > p {
+  font-size: 23px;
+  line-height: 1.55;
+}
+.public-about-hero .landing-button {
+  margin-top: 28px;
+}
+.public-about-principle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+}
+.public-about-principle p {
+  font-size: 18px;
+  line-height: 1.75;
+}
+.public-about-principle p + p {
+  margin-top: 20px;
+}
+.public-engagement {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  gap: 96px;
+}
+.public-engagement > div > p {
+  font-size: 15px;
+  max-width: 36ch;
+  margin-top: 22px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.public-engagement ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.public-engagement li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 24px;
+  padding-block: 24px;
+  border-top: 1px solid var(--rule);
+}
+.public-engagement li:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+.public-engagement li:last-child {
+  padding-bottom: 0;
+}
+.public-engagement li > span {
+  color: var(--green);
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+}
+.public-world .public-engagement h3 {
+  font-size: 21px;
+}
+.public-engagement li p {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Existing enquiry logic is untouched; only its presentation joins the public system. */
+.public-contact-head {
+  padding-block: 48px 36px;
+}
+.public-contact-head > p {
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 52ch;
+}
+.public-world .contact-grid {
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.8fr);
+  gap: 64px;
+  padding-bottom: 64px;
+}
+.public-world .contact-aside {
+  padding: 28px;
+  background: var(--yellow);
+  border-radius: 12px;
+  align-self: start;
+}
+.public-world .contact-aside h2 {
+  font-size: 28px;
+}
+.public-world .contact-aside p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+.public-world .contact-aside li {
+  font-size: 14px;
+  padding-block: 10px;
+  line-height: 1.7;
+}
+.public-world .contact-aside .aside-note {
+  font-size: 13px;
+  padding-top: 20px;
+  border-top: 1px solid #acbb61;
+}
+.public-world .contact-aside .text-link {
+  font-size: 13px;
+}
+.public-world .form-grid {
+  gap: 24px;
+}
+.public-world .field label {
+  font-size: 14px;
+  font-weight: 600;
+}
+.public-world .field label > span {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 400;
+}
+.public-world .field input,
+.public-world .field select,
+.public-world .field textarea {
+  border: 1px solid var(--control-border);
+  border-radius: 6px;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  min-height: 48px;
+  padding: 12px;
+  caret-color: var(--green);
+  box-shadow: none;
+}
+.public-world .field input::placeholder,
+.public-world .field textarea::placeholder {
+  color: var(--muted);
+  opacity: 1;
+}
+.public-world .field textarea {
+  min-height: 150px;
+  line-height: 1.65;
+}
+.public-world .field input:focus,
+.public-world .field select:focus,
+.public-world .field textarea:focus {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+  border-color: var(--green);
+}
+.public-world .field [aria-invalid="true"] {
+  border-color: var(--danger);
+}
+.public-world .field-help {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+.public-world .field-error {
+  color: var(--danger);
+  font-size: 13px;
+}
+.public-world .conditional-fields {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  background: var(--mint);
+  border: 0;
+  border-radius: 8px;
+  padding: 24px;
+}
+.public-world .conditional-fields h2 {
+  grid-column: 1 / -1;
+  font-size: 22px;
+}
+.public-world .checkbox-field {
+  font-size: 13px;
+  line-height: 1.7;
+  min-height: 44px;
+}
+.public-world .checkbox-field input {
+  accent-color: var(--green);
+  flex-shrink: 0;
+}
+.public-world .notice {
+  border: 1px solid var(--rule);
+  background: var(--mint);
+  border-radius: 8px;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.7;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+.public-world .notice.error {
+  border-color: #c59c89;
+  background: #fbf0e6;
+  color: #75372a;
+}
+.public-world .notice h2 {
+  font-size: 22px;
+}
+.public-world .notice button {
+  color: inherit;
+  text-align: left;
+  min-height: 44px;
+}
+.public-world .button {
+  display: inline-flex;
+  gap: 20px;
+  min-height: 50px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  border: 1px solid var(--green);
+  background: var(--green);
+  color: var(--paper);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  box-shadow: none;
+  transition:
+    transform 140ms cubic-bezier(0.23, 1, 0.32, 1),
+    background-color 140ms ease;
+}
+.public-world .button > svg {
+  display: block;
+  flex-shrink: 0;
+}
+.public-world .button-outline {
+  background: transparent;
+  color: var(--green);
+}
+.public-world .button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.public-world .text-link {
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  min-height: 44px;
+}
+.public-world button.text-link {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.public-world .submit-row {
+  gap: 20px;
+}
+.public-world .submit-row > span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Readable legal and honest success/empty states, without repeated sales sections. */
+.public-world .page-intro {
+  max-width: 1280px;
+  padding-block: 48px 40px;
+}
+.public-world .page-intro h1 {
+  font-size: clamp(36px, 4.5vw, 60px);
+  max-width: 22ch;
+  line-height: 1.1;
+}
+.public-world .page-intro p {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 62ch;
+  margin-top: 20px;
+}
+.public-world .page-section {
+  padding-bottom: 64px;
+}
+.public-world .prose {
+  max-width: 760px;
+}
+.public-world .prose h2 {
+  font-size: 25px;
+  margin: 32px 0 14px;
+}
+.public-world .prose p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+.public-world .success-page {
+  background: var(--mint);
+  padding-block: 24px;
+}
+.public-world .success-page .page-intro {
+  min-height: 480px;
+}
+.public-world .success-reference {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  display: table;
+  padding: 20px 24px;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+  font-variant-numeric: tabular-nums;
+}
+.public-world .success-page .button {
+  margin-top: 28px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .public-world .public-text-link:hover,
+  .public-service-row h2 a:hover,
+  .public-related a:hover,
+  .public-breadcrumb a:hover {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+  }
+  .public-faq summary:hover,
+  .public-course summary:hover {
+    color: var(--green);
+  }
+  .public-world .button:not(:disabled):hover,
+  .public-training-hero .landing-button:hover {
+    background: var(--green-dark);
+    color: var(--paper);
+  }
+  .public-world .button:not(:disabled):active:not(:focus-visible) {
+    transform: scale(0.98);
+  }
+}
+.public-world .button:focus-visible {
+  transform: none;
+  transition: none;
+}
+@media (max-width: 1050px) {
+  .public-split,
+  .public-directory-intro,
+  .public-service-row,
+  .public-scope-intro,
+  .public-scope,
+  .public-related,
+  .public-training-hero,
+  .public-about-principle,
+  .public-about-hero,
+  .public-engagement,
+  .public-demo-layout,
+  .public-faq,
+  .public-world .contact-grid {
+    column-gap: 40px;
+  }
+  .public-course {
+    column-gap: 32px;
+  }
+  .public-course dl {
+    gap: 14px;
+  }
+  .public-world .contact-grid {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.8fr);
+  }
+  .public-world .contact-aside {
+    padding: 24px;
+  }
+}
+@media (max-width: 800px) {
+  .public-world h1 {
+    font-size: clamp(38px, 5.8vw, 48px);
+  }
+  .public-section,
+  .public-band {
+    padding-block: 48px;
+  }
+  .public-directory-intro {
+    padding-block: 48px 36px;
+  }
+  .public-directory-intro > div > p {
+    font-size: 17px;
+  }
+  .public-world .public-service-statement p:first-child {
+    font-size: 18px;
+  }
+  .public-scope-intro,
+  .public-scope {
+    gap: 32px;
+  }
+  .public-faq,
+  .public-related {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .public-world .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .public-world .contact-aside {
+    max-width: none;
+  }
+  .public-training-plan ol {
+    gap: 24px;
+  }
+  .public-training-hero,
+  .public-about-hero {
+    gap: 32px;
+  }
+  .public-about-hero > div > p {
+    font-size: 18px;
+  }
+  .public-course {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .public-demo-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .public-demo-layout > .work-demo {
+    justify-self: start;
+  }
+  .public-demo-layout > div > p {
+    max-width: 58ch;
+    margin-top: 16px;
+  }
+}
+@media (max-width: 600px) {
+  .public-world h1 {
+    font-size: clamp(36px, 9.5vw, 48px);
+  }
+  .public-world h2 {
+    font-size: 30px;
+  }
+  .public-section,
+  .public-band {
+    padding-block: 40px;
+  }
+  .public-split,
+  .public-directory-intro,
+  .public-scope-intro,
+  .public-scope,
+  .public-training-hero,
+  .public-about-hero,
+  .public-about-principle,
+  .public-engagement {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .public-directory-intro {
+    padding-block: 36px;
+  }
+  .public-service-row {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding-block: 28px;
+  }
+  .public-service-row > .public-text-link {
+    grid-column: 1;
+  }
+  .public-service-row h2 a {
+    gap: 18px;
+  }
+  .public-world .public-service-row h2 {
+    font-size: 28px;
+  }
+  .public-service-row p,
+  .public-split > div > p,
+  .public-about-principle p,
+  .public-scope-intro p {
+    font-size: 16px;
+  }
+  .public-service-row ul {
+    font-size: 13px;
+  }
+  .public-directory {
+    padding-bottom: 40px;
+  }
+  .public-breadcrumb {
+    gap: 10px;
+    font-size: 12px;
+  }
+  .public-service-statement {
+    padding: 0;
+  }
+  .public-world .public-service-statement p:first-child {
+    font-size: 17px;
+  }
+  .public-world .public-service-statement p:last-child {
+    margin-top: 18px;
+    padding-top: 18px;
+  }
+  .public-scope-intro {
+    padding-bottom: 32px;
+  }
+  .public-scope {
+    padding-bottom: 40px;
+    gap: 36px;
+  }
+  .public-scope li {
+    font-size: 15px;
+  }
+  .public-faq summary {
+    font-size: 14px;
+  }
+  .public-faq details > p {
+    padding-right: 0;
+    font-size: 14px;
+  }
+  .public-related a {
+    font-size: 16px;
+  }
+  .public-world .public-training-offer h2 {
+    font-size: 24px;
+  }
+  .public-training-offer {
+    border-top: 1px solid #acbb61;
+    padding-top: 28px;
+  }
+  .public-training-offer p {
+    font-size: 16px;
+  }
+  .public-section-head {
+    display: block;
+    margin-bottom: 24px;
+  }
+  .public-section-head p {
+    margin-top: 12px;
+  }
+  .public-course {
+    padding: 24px;
+  }
+  .public-course dl {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .public-course dl > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .public-course dt {
+    margin: 0;
+    font-size: 13px;
+  }
+  .public-training-plan ol {
+    grid-template-columns: 1fr;
+    margin-top: 28px;
+    gap: 24px;
+  }
+  .public-training-plan li {
+    padding-top: 20px;
+  }
+  .public-about-hero > div > p {
+    font-size: 18px;
+  }
+  .public-engagement > div > p {
+    max-width: 52ch;
+  }
+  .public-engagement li {
+    gap: 16px;
+  }
+  .public-world .public-engagement h3 {
+    font-size: 19px;
+  }
+  .public-contact-head {
+    padding-block: 36px 28px;
+  }
+  .public-contact-head > p {
+    font-size: 16px;
+    margin-top: 16px;
+  }
+  .public-world .contact-grid {
+    padding-bottom: 40px;
+  }
+  .public-world .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .public-world .conditional-fields {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  .public-world .form-grid .field {
+    min-width: 0;
+  }
+  .public-world .submit-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .public-world .page-intro {
+    padding-block: 36px 32px;
+  }
+  .public-world .page-intro h1 {
+    font-size: 36px;
+  }
+  .public-world .page-intro p {
+    font-size: 16px;
+  }
+  .public-world .prose h2 {
+    font-size: 24px;
+  }
+  .public-world .success-page .page-intro {
+    min-height: 400px;
+  }
+  .public-world .success-reference {
+    padding: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .public-world .button:active {
+    transform: none;
+  }
+}

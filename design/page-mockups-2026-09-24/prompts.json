@@ -1,0 +1,128 @@
+{
+  "created": "2026-09-24",
+  "generator": "built-in image_gen",
+  "requestedSize": {
+    "width": 1920,
+    "height": 1080
+  },
+  "description": "Static page concept set; not a functional website or full long-scroll implementation.",
+  "designSources": [
+    "../../../DESIGN-apple.md",
+    "../../PRODUCT.md"
+  ],
+  "basePrompt": "Use case: ui-mockup.\nAsset type: one polished desktop webpage mockup for Nextgen Tech Sdn Bhd. Flat straight-on website screen, exact canvas 1920 x 1080 pixels, landscape 16:9. One page only, not a collage, not a device frame, not a mood board, no browser chrome.\nDesign direction: the established Nextgen Tech Apple-inspired visual system. Sophisticated, restrained, believable professional website designed by a meticulous human designer. System sans-serif typography similar to SF Pro/Segoe UI, strong weight 600 headlines, carefully balanced wraps, body copy readable and intentional. White #FFFFFF and neutral #F5F5F7 surfaces, ink #1D1D1F, secondary text #616165, action blue #0066CC, charcoal #272729 only when the specific page calls for it. Absolutely no purple. Ultra-thin dividers #E0E0E0, 8px input radius, at most 18px utility panel corners, blue capsule buttons. No shadows on interface cards, ample purposeful negative space, fine outline icons only where useful. Headlines 52-68px; body 19-22px; labels minimum 16px when possible. Optical alignment and consistent gutters matter. Compact desktop header, strong main content, deliberate footer, every region fully composed. All content ends above footer, no sliced or unfinished components.\nBrand wordmark is literal lowercase \"nextgen tech\" with no invented symbol. Marketing header: 52px black bar, white wordmark on left, Services, Training, About, Contact links to right, restrained project contact action. Use the same header for all public pages. Footer with company name and understated Services, Privacy, Website information links. A small 22px-tall neutral artboard annotation strip at the very bottom carries the exact requested page label; this annotation is outside the web UI, not a headline eyebrow.\nQuality: crisp readable English, accurate short copy, precise line-height, sensible controls, generous breathing room and fully believable website spacing. This is a static visual concept, not a claim of functional UI.\nAvoid: generic AI-looking SaaS templates, floating gradient blobs, glows, glassmorphism, robot imagery, ornamental grids, random sparkles, gradient headlines, identical icon-card grids, fake testimonials, invented clients, partner logos, fabricated commercial results, unnecessary metric cards, surreal people, tiny gibberish paragraphs. No placeholder lorem ipsum. Use only concise supplied content. User explicitly wants a crafted non-generic result.\nFooter must not show a year. Footer text is only \"Nextgen Tech Sdn Bhd\" plus supplied links. Do not invent extra slogans on photographic props.",
+  "pages": [
+    {
+      "id": "01-home",
+      "label": "01 — Home  /",
+      "kind": "public",
+      "spec": "Main hero is elegant centered composition on #F5F5F7. Headline exactly \"Built around your business.\\nReady for what’s next.\" Supporting line \"Technology consulting, custom applications, AI integration and training.\" Blue button \"Discuss your project\", secondary blue text \"Explore services\". Below, an exceptionally realistic editorial product photograph of an unbranded laptop and phone on a pale table, showing a simple calm operations application with blue accents and no fabricated metrics. Devices occupy an expansive horizontal stage, not floating. Small caption \"Illustrative application concept\". Lower portion transitions to a clean white service index: four concise horizontal entries \"Consulting\", \"Application development\", \"AI integration\", \"Training\", each with a short useful one-line description and a simple right arrow. Complete slim footer. Fit at normal desktop scale; most visual weight in typography and product image. Do not cram the full long-scroll site.",
+      "file": "01-home.png"
+    },
+    {
+      "id": "02-services",
+      "label": "02 — Services  /services",
+      "kind": "public",
+      "spec": "Complete services overview. Large left-aligned headline \"Start with what your business needs.\" Smaller right-hand intro \"A clear plan. A useful application. A connected workflow. A more confident team.\" Main content is four wide editorial rows separated by hairlines, no cards. Each has service title on left, need/output in centre, quiet blue action on right. Rows: \"Technology consulting\" / \"A practical direction before you build.\" / \"Explore consulting\"; \"Application development\" / \"Software shaped around your work.\" / \"Explore development\"; \"AI agents & integration\" / \"Focused assistance with clear boundaries.\" / \"Explore AI integration\"; \"AI training\" / \"Practical learning for your team.\" / \"Explore training\". At bottom a soft-grey horizontal callout \"Not sure where to begin?\" with \"Let’s find a starting point\" blue pill. Elegant typographic comparison page, generous column alignment and whitespace, footer fully visible.",
+      "file": "02-services.png"
+    },
+    {
+      "id": "03-consulting",
+      "label": "03 — Technology consulting  /services/consulting",
+      "kind": "public",
+      "spec": "Technology consulting detail page. Balanced asymmetrical layout. Top left narrow breadcrumb \"Services / Consulting\". Large headline \"A clear direction.\\nBefore you build.\" Intro \"Understand the work, weigh the options and define a useful next step.\" Blue pill \"Discuss consulting\". On right a beautifully photographed real paper planning document and notebook on a neutral desk, small caption \"Illustrative planning materials\"; no people, no invented report metrics. Lower content is two spacious typographic columns divided by one fine vertical rule: \"What we can deliver\" with Workflow assessment, Prioritised options, Implementation roadmap; \"What helps us start\" with Your current systems, The people involved, Priorities and constraints. A narrow bottom process line \"Understand → Evaluate → Agree the scope\" and small note \"Final deliverables are agreed for your engagement.\" Footer.",
+      "file": "03-consulting.png"
+    },
+    {
+      "id": "04-application-development",
+      "label": "04 — Application development  /services/application-development",
+      "kind": "public",
+      "spec": "Custom application development service page. A wide split hero, bold left headline \"Software shaped around\\nthe way you work.\" Supporting line \"Turn a defined workflow into a useful, maintainable application.\" Blue CTA \"Discuss an application\". Right dominant realistic unbranded desktop monitor with tablet, on pale surface, displaying an understated well-designed requests list UI; clear caption \"Illustrative application\". Below hero use an open three-column deliverables area, no boxes: \"Define\" / \"Requirements and user journeys\"; \"Build\" / \"Application and API implementation\"; \"Hand over\" / \"Testing and useful documentation\". Beneath, a fine-rule band \"Start with the people using it.\" and short text \"Bring your essential workflows, integrations and release priorities.\" Complete footer. Meticulous device photo, grounded shadows only within photo, no floating widgets.",
+      "file": "04-application-development.png"
+    },
+    {
+      "id": "05-ai-integration",
+      "label": "05 — AI agents & integration  /services/ai-agents-integration",
+      "kind": "public",
+      "spec": "AI integration service page, charcoal #272729 main hero beneath black navigation. White large centered title \"Put AI to work.\\nKeep people in control.\" Supporting grey text \"Connect approved knowledge and tools to one well-defined workflow.\" Blue pill \"Discuss AI integration\". Below within charcoal, horizontal demonstration with three elegant plain columns joined by thin arrows, not card boxes: \"Input\" / \"A customer asks about a delivery change.\"; \"Bounded assistance\" / \"Find the relevant policy and prepare a draft.\"; \"Human review\" / \"Your team checks and approves the response.\" A simple active tab line above: \"Support triage\", \"Knowledge retrieval\", \"Document processing\". Small caption \"Illustrative workflow · No live AI connection\". White lower strip with three concise assurances \"Approved information\", \"Clear permissions\", \"Evaluation and fallback\". Footer. No robot, brain, orb, sparkles, neural network, glowing node decoration or invented performance claims.",
+      "file": "05-ai-integration.png"
+    },
+    {
+      "id": "06-training",
+      "label": "06 — AI training  /training",
+      "kind": "public",
+      "spec": "Training page with warm human editorial clarity while staying neutral grey/blue. Large left headline \"Build your team’s\\nconfidence with AI.\" Intro \"Practical learning, connected to the work your team actually does.\" Blue pill \"Request a training plan\". Right hero photo of a real-looking quiet workshop tabletop: open notebook, unbranded laptop showing a text exercise, pen, hands only naturally annotating; no portrait or implied actual staff. Caption \"Illustrative workshop setting\". Lower half is a carefully aligned 2x2 open editorial curriculum index with hairline separators (no rounded cards): \"AI essentials\" / \"Understand useful applications and limitations.\"; \"Prompting & verification\" / \"Write clearer instructions and check outputs.\"; \"AI in everyday workflows\" / \"Map tasks and choose review points.\"; \"Technical agent workshops\" / \"Explore retrieval, tools and evaluation.\" Tiny truthful note \"Learning areas for discussion. Format and scope agreed separately.\" Footer.",
+      "file": "06-training.png"
+    },
+    {
+      "id": "07-about",
+      "label": "07 — About Nextgen Tech  /about",
+      "kind": "public",
+      "spec": "About page with excellent editorial hierarchy. Spacious left-aligned main headline \"Technology is the tool.\\nYour business is the point.\" Right intro paragraph \"Nextgen Tech Sdn Bhd brings consulting, application development, AI integration and training into one practical conversation.\" Under it, an expansive horizontal original photo of a quiet contemporary work surface with notebook, laptop corner and natural side-light, no staged stock team portraits; understated caption \"Illustrative workspace\". Lower area has left subheading \"Considered from start to handover.\" and five compact ordered steps aligned horizontally with small meaningful sequence numbers: \"Understand\", \"Define\", \"Build or teach\", \"Test\", \"Hand over\". Short closing call to action \"Tell us what you want to improve.\" / blue pill \"Discuss your project\". No invented history, client logos, team names, claims or fake statistics. Footer.",
+      "file": "07-about.png"
+    },
+    {
+      "id": "08-contact",
+      "label": "08 — Project enquiry  /contact",
+      "kind": "public",
+      "spec": "Complete contact page. Clear headline \"Tell us what you want\\nto build or improve.\" Short line \"A few details are enough to start.\" Main layout: broad form on left and small calm sidebar on right separated by whitespace. Form has real persistent labels and elegant 48px-high white outlined inputs: row 1 \"Your name *\", \"Email address *\"; row 2 full-width \"What can we help with? *\" select showing \"Application development\"; row 3 wide textarea \"Tell us about the challenge *\", subtle helper \"Describe the workflow or outcome you have in mind.\"; row 4 \"Company (optional)\" and \"Timeframe (optional)\"; row 5 \"Indicative budget (MYR)\" select \"Not sure yet\" and discreet text \"Additional details (optional)\". Below a checkbox \"I have read the privacy information.\" then blue button \"Send enquiry\". Sidebar heading \"What happens next\" with 3 readable numbered lines: \"Your enquiry is recorded.\", \"Keep your reference.\", \"Scope and next steps are discussed.\" Small note \"No meeting or training place is booked.\" Small neutral notice \"Design preview · Sample form\". Footer. No personal data, no fake contact addresses or chat bubble. Align labels perfectly and avoid cramped form controls.",
+      "file": "08-contact.png"
+    },
+    {
+      "id": "09-enquiry-recorded",
+      "label": "09 — Enquiry acknowledgement  /thank-you",
+      "kind": "public",
+      "spec": "Enquiry confirmation page. Calm centred medium-width content in plenty of white space. Small simple outlined check in blue circle, not a giant celebration graphic. Main headline \"Your enquiry is recorded.\" Description \"Keep this reference for your enquiry.\" A restrained pale-grey reference strip labelled \"Enquiry reference\" and value \"NG-DEMO-001\", with small outlined copy icon. Clear small caption \"Illustrative reference\". Beneath, a short three-item text sequence \"Your details are recorded\", \"Next steps are discussed separately\", \"No meeting or training place is booked\". Primary blue pill \"Explore our services\" and quiet text link \"Back to home\". At bottom a slim grey reassurance band \"A useful conversation starts with understanding your work.\" Header and complete footer; avoid confetti, invented response SLA, email-delivery promises or oversized blank card.",
+      "file": "09-enquiry-recorded.png"
+    },
+    {
+      "id": "10-privacy",
+      "label": "10 — Privacy information  /privacy",
+      "kind": "public",
+      "spec": "Readable privacy information page visual, public shell. Left-aligned headline \"Privacy information\". Beneath small grey notice \"Draft for review · Final policy to be confirmed\". Wide content region has narrow left contents list \"Information you provide\", \"Why it is collected\", \"Access and retention\", \"Your questions\"; broad right reading column max approximately 70 characters. Use short exact content only: heading \"Information you provide\" paragraph \"An enquiry may include your name, email, service interest and a description of your project.\"; heading \"Why it is collected\" paragraph \"These details help us understand your enquiry and discuss a suitable next step.\"; heading \"Access and retention\" paragraph \"Production access, retention and contact arrangements must be confirmed before publication.\"; heading \"Your questions\" paragraph \"Use the enquiry page to ask about the information you provide.\" Quiet link \"Contact Nextgen Tech\". Excellent reading rhythm, thin dividers, obvious heading hierarchy, no fabricated legal guarantees or dates. Footer fully visible.",
+      "file": "10-privacy.png"
+    },
+    {
+      "id": "11-website-information",
+      "label": "11 — Website information  /terms",
+      "kind": "public",
+      "spec": "Website information page, elegant reading layout matching privacy. Main title \"Website information\". Subtext \"How to read the services and examples on this website.\" Fine grey notice \"Draft for review\". Left narrow in-page navigation: \"Service scope\", \"Illustrative examples\", \"Enquiries\", \"Before publication\". Main column headings and short copy: \"Service scope\" / \"Services describe possible engagements. Deliverables, responsibilities and commercial terms are agreed separately.\"; \"Illustrative examples\" / \"Concept images and demonstrations explain possible approaches. They are labelled where shown.\"; \"Enquiries\" / \"Sending an enquiry does not confirm a booking, purchase or training place.\"; \"Before publication\" / \"Final company details and website terms require approval.\" End quiet link \"Discuss your project\". No dense unreadable legalese, no invented contract clauses, no copied legal policy. Header/footer match all public pages.",
+      "file": "11-website-information.png"
+    },
+    {
+      "id": "12-page-not-found",
+      "label": "12 — Page not found  /404",
+      "kind": "public",
+      "spec": "Complete beautifully restrained 404 page. White canvas, generous space. Left of centre a large typographic \"404\" in very pale neutral grey, no cartoon illustration. To its right a clear dark headline \"This page isn’t here.\" Supporting line \"The link may have changed. Let’s find a useful next step.\" Blue pill \"Back to home\" and text link \"Explore services\". A thin horizontal rule lower down introduces \"Looking for something specific?\" with three plain blue links \"Consulting\", \"Application development\", \"AI training\". Proper public header and footer. Sophisticated optical balance, no broken robot, no floating objects, no purple or generic error illustration.",
+      "file": "12-page-not-found.png"
+    },
+    {
+      "id": "13-staff-access",
+      "label": "13 — Staff access  /admin",
+      "kind": "admin",
+      "spec": "Staff access page. Replace public marketing navigation with compact white staff header: lowercase \"nextgen tech\" left, small \"Staff workspace\" adjacent, blue text \"Back to website\" right, fine bottom border. Main canvas very pale #F5F5F7. Centred narrow login-like panel without shadow, white surface, a subtle 1px boundary and 12px corners. Title \"Your staff workspace.\" Paragraph \"Review enquiries, add notes and manage follow-up.\" A small neutral information block titled \"Local development access\" with text \"This preview uses a local access shortcut.\" One primary blue button \"Open local workspace\". Small supporting text \"Production sign-in is configured separately.\" No email/password fields because current local flow is a shortcut. Small footer \"Nextgen Tech Sdn Bhd · Staff access\". Keep useful information legible, no security badges, mock metrics or hero photography.",
+      "file": "13-staff-access.png"
+    },
+    {
+      "id": "14-enquiry-workspace",
+      "label": "14 — Enquiry workspace  /admin/enquiries",
+      "kind": "admin",
+      "spec": "Professional staff enquiry list. Same staff shell white header: \"nextgen tech\", \"Staff workspace\", right \"Back to website\" and \"Sign out\". Main title \"Enquiry workspace\", short description \"Review enquiries and keep the next step clear.\" Small grey \"Sample data\" tag. Right small outlined \"Refresh\" button. Two understated tabs \"Enquiries\" active blue underline and \"Notification status\". Main content a beautifully typeset full-width data table with fine horizontal separators, no enclosing thick card: columns \"Reference\", \"Name / company\", \"Service\", \"Stage\", \"Next action\", \"Received\". Five synthetic rows: NG-DEMO-001 / Alex Tan — Example Studio / Application development / New / Review enquiry / Today; NG-DEMO-002 / Sam Lee — Sample Operations / Consulting / Reviewing / Clarify current systems / Today; NG-DEMO-003 / Jamie Lim — Example Learning / AI training / Contacted / Discuss workshop format / Yesterday; NG-DEMO-004 / Taylor Wong — Sample Services / AI integration / Qualified / Agree discovery scope / Yesterday; NG-DEMO-005 / Casey Chen — Example Group / Consulting / Closed / No further action / 21 Sep. Stage badges small neutral outlined, blue only active indication. Bottom \"Showing 5 sample enquiries\". No charts, vanity metrics, revenue widgets, profile photos or fake activity. Plenty of row height, balanced table columns, footer and page annotation.",
+      "file": "14-enquiry-workspace.png"
+    },
+    {
+      "id": "15-enquiry-detail",
+      "label": "15 — Enquiry detail  /admin/enquiries/NG-DEMO-001",
+      "kind": "admin",
+      "spec": "Staff enquiry detail, same white header and shell as enquiry list. Top blue back link \"All enquiries\". Title \"NG-DEMO-001\" with small neutral \"Sample data\" label. Two-column main workspace: broad left readable record, narrower right controls. Left heading \"Alex Tan\" with small \"Example Studio · Application development\". Show labelled email \"alex@example.com\". Section \"Project enquiry\" with short text \"We want one place to review incoming requests and track responsibility across our team.\" Then two modest detail columns \"Timeframe\" / \"To be discussed\", \"Budget\" / \"Not sure yet\". Below divider, \"History\" showing two compact timeline rows \"Enquiry recorded\" and \"Awaiting initial review\". Right white panel thin border no shadow: heading \"Next steps\", \"Stage\" select \"New\", \"Next action\" input \"Review enquiry\", \"Follow up on\" date field, \"Reason for update\" small textarea, blue button \"Save update\". Below panel an \"Internal notes\" field and \"Add note\" text button. Balanced information density; no invented chat or assistant widget. Small footer \"Sample record · Design preview\".",
+      "file": "15-enquiry-detail.png"
+    },
+    {
+      "id": "16-notification-status",
+      "label": "16 — Notification status  /admin/notifications",
+      "kind": "admin",
+      "spec": "Staff notification status page matching staff shell. Title \"Notification status\", supporting line \"Enquiries and notification delivery are tracked separately.\" Tabs \"Enquiries\", \"Notification status\" active blue underline. A wide quiet pale-grey information band with thin outlined info icon, title \"Email provider not connected\", text \"Enquiries remain recorded. This local preview does not send email.\" Below large table, no extra cards, headings \"Reference\", \"Notification\", \"Status\", \"Next step\". Three clearly synthetic rows: NG-DEMO-001 / Staff notification / Not configured / Connect an email provider; NG-DEMO-002 / Staff notification / Not configured / Connect an email provider; NG-DEMO-003 / Staff notification / Not configured / Connect an email provider. Small label \"Sample records\" above table as functional data status, not marketing eyebrow. Below plain explanation heading \"What this means\" with \"A recorded enquiry is available in the workspace even when no email has been sent.\" One blue link \"Return to enquiries\", small outlined \"Refresh\" control. No fake sent success, no red alert flood, no unrelated settings or charts. Complete footer.",
+      "file": "16-notification-status.png"
+    }
+  ]
+}
