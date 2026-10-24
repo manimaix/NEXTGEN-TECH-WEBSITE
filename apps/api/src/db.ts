@@ -16,7 +16,11 @@ export interface Database {
 export async function openDatabase(location?: string): Promise<Database> {
   const sql = (
     await Promise.all(
-      ["001-foundation.sql", "002-site-images.sql"].map((name) =>
+      [
+        "001-foundation.sql",
+        "002-site-images.sql",
+        "003-training-courses.sql",
+      ].map((name) =>
         readFile(
           new URL(`../../../database/migrations/${name}`, import.meta.url),
           "utf8",

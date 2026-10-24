@@ -16,6 +16,7 @@ import {
 import { DomainError, intake, updateLead } from "./leads";
 import type { Database } from "./db";
 import { registerSiteImages } from "./site-images";
+import { registerTrainingCourses } from "./training-courses";
 
 export function createApp(
   db: Database,
@@ -289,6 +290,7 @@ export function createApp(
     ),
   );
   registerSiteImages(app, db);
+  registerTrainingCourses(app, db);
   app.use("/api/v1", (_req, _res, next) =>
     next(new DomainError(404, "NOT_FOUND", "Endpoint not found.")),
   );

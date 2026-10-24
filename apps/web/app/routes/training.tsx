@@ -2,6 +2,8 @@ import { Plus, ArrowDown } from "lucide-react";
 import { PublicAction, PublicFAQ } from "../components/PublicUI";
 import { faqs } from "../../content/services";
 import { SitePhoto } from "../components/SiteImages";
+import { usePublishedTrainingCourses } from "../hooks/training-courses";
+import "../styles/training-courses.css";
 
 export const meta = () => [
   { title: "HRD Corp-claimable team training — Nextgen Tech" },
@@ -13,6 +15,7 @@ export const meta = () => [
 ];
 
 export default function Training() {
+  const { courses, loading, error, refresh } = usePublishedTrainingCourses();
   return (
     <>
       <section className="public-band public-band-yellow">
@@ -46,45 +49,82 @@ export default function Training() {
         </div>
       </section>
       <section
-        className="public-wrap public-section"
+        className="public-wrap public-section training-catalogue"
         id="courses"
         aria-labelledby="course-heading"
       >
         <div className="public-section-head">
           <h2 id="course-heading">Course catalogue</h2>
-          <p>Course information is being added.</p>
+          <p>Explore practical AI skills for your team.</p>
         </div>
-        <article className="public-course">
-          <div className="public-course-name">
-            <h3>Placeholder</h3>
-            <p>Course name</p>
+        {loading ? (
+          <div
+            className="training-catalogue-state training-catalogue-loading"
+            role="status"
+            aria-label="Loading course catalogue"
+          >
+            <p>Loading course catalogue…</p>
+            <span />
+            <span />
           </div>
-          <dl>
-            <div>
-              <dt>For</dt>
-              <dd>Placeholder</dd>
-            </div>
-            <div>
-              <dt>Duration</dt>
-              <dd>Placeholder</dd>
-            </div>
-            <div>
-              <dt>Format</dt>
-              <dd>Placeholder</dd>
-            </div>
-          </dl>
-          <details>
-            <summary>
-              Course outline
-              <Plus size={20} aria-hidden="true" />
-            </summary>
-            <p>Placeholder</p>
-          </details>
-        </article>
+        ) : error ? (
+          <div className="training-catalogue-state" role="alert">
+            <p>{error}</p>
+            <button
+              className="public-text-link"
+              type="button"
+              onClick={() => void refresh()}
+            >
+              Try loading again
+            </button>
+          </div>
+        ) : courses?.length ? (
+          courses.map((course) => (
+            <article className="public-course" key={course.id}>
+              <div className="public-course-name">
+                <h3>{course.title}</h3>
+                {course.summary && <p>{course.summary}</p>}
+              </div>
+              <dl>
+                <div>
+                  <dt>For</dt>
+                  <dd>{course.audience}</dd>
+                </div>
+                <div>
+                  <dt>Duration</dt>
+                  <dd>{course.duration}</dd>
+                </div>
+                <div>
+                  <dt>Format</dt>
+                  <dd>{course.format}</dd>
+                </div>
+              </dl>
+              <details>
+                <summary>
+                  Course outline
+                  <Plus size={20} aria-hidden="true" />
+                </summary>
+                <p className="training-course-outline">{course.outline}</p>
+              </details>
+              {course.isPlaceholder && (
+                <p className="training-course-disclosure">
+                  Course names, durations and outlines are placeholders. Ask us
+                  about the available courses.
+                </p>
+              )}
+            </article>
+          ))
+        ) : (
+          <div className="training-catalogue-state">
+            <p>
+              No courses are currently published. Ask us about training for your
+              team.
+            </p>
+          </div>
+        )}
         <p className="public-note">
-          Course names, durations and outlines are placeholders. Ask us about
-          the available courses and the requirements for your team’s HRD Corp
-          claim.
+          Ask us about the available courses and the requirements for your
+          team’s HRD Corp claim.
         </p>
       </section>
       <section className="public-band public-band-mint">

@@ -9,6 +9,7 @@ import { createApp } from "../apps/api/src/app";
 import { openDatabase, type Database } from "../apps/api/src/db";
 import {
   defaultImage,
+  imageSlots,
   maxImageBytes,
   type SiteImage,
 } from "../packages/contracts/src/site-images";
@@ -84,7 +85,7 @@ test("large uploads, metadata, versions, audit and resets survive disk database 
     const response = await fetch(`${base}/api/v1/site-images`);
     assert.equal(response.status, 200);
     const images: SiteImage[] = (await response.json()).data;
-    assert.equal(images.length, 6);
+    assert.equal(images.length, imageSlots.length);
     assert.deepEqual(
       images.find((image) => image.slot === "team-2"),
       defaultImage("team-2"),

@@ -2,6 +2,9 @@ import { Link } from "react-router";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { services, servicePath } from "../../content/services";
 import { PublicAction } from "../components/PublicUI";
+import { SitePhoto } from "../components/SiteImages";
+import { serviceImageSlots } from "../../../../packages/contracts/src/site-images";
+import "../styles/service-media.css";
 
 export const meta = () => [
   { title: "Technical services — Nextgen Tech" },
@@ -36,9 +39,17 @@ export default function Services() {
         className="public-wrap public-directory"
         aria-label="Explore our services"
       >
-        {services.map((service) => (
-          <article className="public-service-row" key={service.id}>
-            <div>
+        {services.map((service, index) => (
+          <article
+            className="public-service-row service-directory-row"
+            key={service.id}
+          >
+            <SitePhoto
+              slot={serviceImageSlots[service.id]}
+              className="service-directory-photo"
+              eager={index === 0}
+            />
+            <div className="service-directory-content">
               <h2>
                 <Link to={servicePath(service)}>
                   {service.id === "ai_training"
@@ -52,19 +63,19 @@ export default function Services() {
                   ? "HRD Corp-claimable courses to build your employees’ practical AI and technology skills."
                   : service.description}
               </p>
+              <ul aria-label="Possible scope">
+                {service.deliverables.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <Link to={servicePath(service)} className="public-text-link">
+                Explore{" "}
+                {service.id === "ai_agents_integration"
+                  ? service.short
+                  : service.short.toLowerCase()}
+                <ArrowRight size={18} aria-hidden="true" />
+              </Link>
             </div>
-            <ul aria-label="Possible scope">
-              {service.deliverables.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-            <Link to={servicePath(service)} className="public-text-link">
-              Explore{" "}
-              {service.id === "ai_agents_integration"
-                ? service.short
-                : service.short.toLowerCase()}
-              <ArrowRight size={18} aria-hidden="true" />
-            </Link>
           </article>
         ))}
       </section>

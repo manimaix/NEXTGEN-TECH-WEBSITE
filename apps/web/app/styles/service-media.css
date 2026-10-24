@@ -1,0 +1,82 @@
+/* Service imagery extends the established green public pages. */
+.public-service-row.service-directory-row {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 32px clamp(32px, 4.5vw, 64px);
+  padding-block: 40px;
+}
+
+.service-directory-photo {
+  align-self: start;
+}
+
+.service-directory-content {
+  min-width: 0;
+}
+
+.service-directory-content ul {
+  margin-top: 24px;
+}
+
+.service-directory-content .public-text-link {
+  margin-top: 20px;
+}
+
+.service-directory-content h2 a {
+  align-items: start;
+}
+
+.service-directory-content h2 svg {
+  margin-top: 6px;
+}
+
+.public-band.service-media-hero {
+  padding-block: 40px 28px;
+}
+
+.service-media-hero .service-media-heading {
+  gap: 28px clamp(32px, 5vw, 72px);
+}
+
+.service-media-hero .service-hero-photo {
+  margin-top: 36px;
+}
+
+.service-hero-photo figcaption {
+  color: #d7e8d6;
+}
+
+@media (max-width: 900px) {
+  .public-service-row.service-directory-row {
+    column-gap: 32px;
+  }
+
+  .service-media-hero .service-media-heading {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 32px;
+  }
+}
+
+@media (max-width: 700px) {
+  .public-service-row.service-directory-row,
+  .service-media-hero .service-media-heading {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .public-service-row.service-directory-row {
+    gap: 24px;
+    padding-block: 28px;
+  }
+
+  .service-directory-content ul {
+    margin-top: 20px;
+  }
+
+  .public-band.service-media-hero {
+    padding-block: 32px 24px;
+  }
+
+  .service-media-hero .service-hero-photo {
+    margin-top: 28px;
+  }
+}

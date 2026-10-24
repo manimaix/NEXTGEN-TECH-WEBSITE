@@ -4,7 +4,7 @@ import type { Server } from "node:http";
 import sharp from "sharp";
 import { openDatabase, type Database } from "../apps/api/src/db";
 import { createApp } from "../apps/api/src/app";
-import { defaultImage, imageSlots } from "../packages/contracts/src/site-images";
+import { defaultImage, imageSlots, serviceImageSlots } from "../packages/contracts/src/site-images";
 
 let db:Database,server:Server,base:string,cookie:string,csrf:string,photo:Buffer;
 const origin="http://127.0.0.1:5174";
@@ -22,8 +22,8 @@ before(async()=>{
 after(async()=>{if(server)await new Promise<void>(resolve=>server.close(()=>resolve()));await db?.close();});
 test("public defaults cover each placement and disclose generated placeholders",async()=>{
   const result=await (await fetch(`${base}/site-images`)).json();
-  assert.equal(result.data.length,6);
-  for(const image of result.data){assert.equal(image.isPlaceholder,true);assert.equal(image.uploaded,false);assert.ok(image.src.startsWith("/images/placeholders/"));assert.equal(image.version,0);}
+  assert.equal(result.data.length,imageSlots.length);
+  for(const image of result.data){assert.equal(image.isPlaceholder,true);assert.equal(image.uploaded,false);assert.equal(image.src,defaultImage(image.slot).src);assert.equal(image.version,0);}
   assert.equal((await fetch(`${base}/admin/site-images`)).status,401);
 });
 test("image writes require a session, correct origin and CSRF before parsing uploads",async()=>{
@@ -81,5 +81,39 @@ test("all fixed placements accept honest metadata and preserve row versions",asy
     const response=await write(slot.id,{alt,caption,name,role,focalX,focalY,isPlaceholder,expectedVersion:0});
     // This uses a fresh staff session to avoid testing the write limiter here.
     if(response.status===429){const login=await fetch(`${base}/auth/local`,{method:"POST",headers:{origin}});cookie=login.headers.getSetCookie()[0].split(";")[0];csrf=(await login.json()).data.csrf;assert.equal((await write(slot.id,{alt,caption,name,role,focalX,focalY,isPlaceholder,expectedVersion:0})).status,200);}else assert.equal(response.status,200);
+  }
+});
+
+test("service placements publish through the shared image API and reset to their own illustrations", async () => {
+  const login = await fetch(`${base}/auth/local`, { method: "POST", headers: { origin } });
+  cookie = login.headers.getSetCookie()[0].split(";")[0];
+  csrf = (await login.json()).data.csrf;
+  for (const slot of Object.values(serviceImageSlots).filter(id => id.startsWith("service-"))) {
+    const images = (await (await fetch(`${base}/site-images`)).json()).data;
+    const current = images.find((image: {slot: string}) => image.slot === slot);
+    assert.ok(current);
+    const response = await write(slot, {
+      ...draft(),
+      expectedVersion: current.version,
+      image: { type: "image/jpeg", base64: photo.toString("base64") },
+    });
+    assert.equal(response.status, 200);
+    const saved = (await response.json()).data;
+    assert.equal(saved.slot, slot);
+    assert.equal(saved.uploaded, true);
+    assert.equal(saved.focalX, draft().focalX);
+    assert.equal(saved.focalY, draft().focalY);
+    assert.match(saved.src, new RegExp(`/site-images/${slot}/file`));
+    const published = (await (await fetch(`${base}/site-images`)).json()).data;
+    assert.deepEqual(published.find((image: {slot: string}) => image.slot === slot), saved);
+    assert.equal((await fetch(base.replace("/api/v1", "") + saved.src)).status, 200);
+    const reset = await write(slot, { expectedVersion: saved.version }, "DELETE");
+    assert.equal(reset.status, 200);
+    const restored = (await reset.json()).data;
+    assert.equal(restored.src, defaultImage(slot).src);
+    assert.equal(restored.alt, defaultImage(slot).alt);
+    assert.equal(restored.isPlaceholder, true);
+    assert.equal(restored.uploaded, false);
+    assert.equal(restored.version, saved.version + 1);
   }
 });

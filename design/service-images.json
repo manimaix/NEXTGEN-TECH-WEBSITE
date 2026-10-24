@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "project": "Nextgen Tech",
+  "created_date": "2026-10-23",
+  "timezone": "Asia/Kuala_Lumpur",
+  "asset_kind": "AI-generated illustrative raster service imagery",
+  "visual_direction": "Approved green Anybody/Manrope editorial site; restrained cream, evergreen and sage; premium material detail and clean technology product compositions.",
+  "intended_placements": [
+    "What we do / services index",
+    "Corresponding technical service detail mastheads"
+  ],
+  "generation": {
+    "mode": "built-in image_gen only",
+    "tool": "image_gen.imagegen",
+    "calls": 3,
+    "calls_per_asset": 1,
+    "reference_images_used": false,
+    "model_identifier": "not exposed by the built-in tool",
+    "cli_or_external_generator_used": false
+  },
+  "disclosure": "AI-generated illustrative imagery. These scenes and application interfaces are concepts, not photographs of actual Nextgen Tech premises, delivered applications, client projects or deployments.",
+  "verification": {
+    "parent_visual_acceptance": "Main inspected all three workspace PNGs and confirmed they are coherent and acceptable.",
+    "producer_visual_inspection": "Opened each final workspace PNG after prompt embedding. Checked subject, cream/green palette, material detail, distinct composition, and absence of visible logos, people, burned-in headings, robots, neon or floating objects.",
+    "binary_inspection": "PNG signatures, IHDR dimensions and RGB color type checked; all three rasters have distinct SHA-256 checksums. Initial workspace copies matched the retained generated originals byte for byte.",
+    "provenance_tool": "Impeccable embed-prompt",
+    "provenance_scan": "SCAN: 3 rasters, 0 missing",
+    "embedded_prompt_keyword": "impeccable:prompt",
+    "prompt_comparison": "Embedded text matches the saved prompt file; only terminal file newlines are ignored for comparison.",
+    "scope": "Asset production and provenance only; no TS/CSS sources, routes or configs modified by this worker.",
+    "browser_or_runtime_validation": "Not performed by asset producer."
+  },
+  "assets": [
+    {
+      "name": "consulting",
+      "path": "apps/web/public/images/services/consulting.png",
+      "absolute_path": "C:\\WORK\\WEBSITE - NEXTGEN TECH\\nextgen tech website\\apps\\web\\public\\images\\services\\consulting.png",
+      "public_path": "/images/services/consulting.png",
+      "format": "PNG",
+      "width": 1536,
+      "height": 1024,
+      "aspect_ratio": "3:2",
+      "color_mode": "RGB",
+      "opaque": true,
+      "bytes": 2403212,
+      "sha256": "e3d2fd253490f12b31f5707d08c66ff75aa98c63f8f521f67c40a0f2c552ca11",
+      "concept": "Overhead technology planning desk with systems-flow and application-wireframe sheets, green notebook, silver tools and a tablet.",
+      "alt": "Illustrative overhead technology planning desk with diagram sheets, a green notebook and drafting tools.",
+      "disclosure": "AI-generated illustrative image.",
+      "crop_guidance": {
+        "suggested_object_position": "50% 50%",
+        "preferred_aspect_ratios": [
+          "3:2",
+          "16:9"
+        ],
+        "note": "Keep the central systems diagram visible. A wide 16:9 crop can trim the lower tool and wireframe edges; prefer the complete 3:2 frame when those details matter.",
+        "verified_in_page": false
+      },
+      "generation": {
+        "tool": "built-in image_gen.imagegen",
+        "transparent_background": false,
+        "prompt": "Use case: photorealistic-natural\nAsset type: large landscape service photograph for Nextgen Tech's green Anybody/Manrope editorial website, used on a services index and consulting masthead.\nPrimary request: a thoughtful overhead technology planning desk, authored with the clarity and material quality of premium technology product photography.\nScene/backdrop: a clean warm cream desk, subtle real matte surface, quiet daylight studio, no visible room.\nSubject: one generous ivory planning sheet with a precise, simple four-stage systems flow diagram in fine graphite lines and muted evergreen blocks, accompanied by a smaller sheet showing two clear low-fidelity application wireframes. Diagrams use deliberate shapes, connector arrows and blank fields only, without any written labels. A closed dark forest-green fabric notebook, one silver mechanical pencil and one brushed steel straightedge make a small, practical group of planning tools. A slim unbranded silver tablet lies face down near the papers as a quiet technology cue.\nStyle/medium: photorealistic editorial still life; sharp paper fibres, machined aluminum, fine pencil marks and woven notebook cloth; elegant and credible, not a stock office scene.\nComposition/framing: true overhead flat lay, landscape 3:2, one coherent asymmetric arrangement centered in the frame. The main diagram sheet is the dominant subject. Every important object stays inside the central 76% with generous clean breathing room on every edge for responsive crops. No page frame or website UI.\nLighting/mood: broad soft daylight from one side, precise but gentle contact shadows, subtle natural imperfections, calm considered intelligence.\nColor palette: warm ivory and cream, restrained deep evergreen and sage accents, graphite and brushed silver; natural color balance.\nConstraints: entirely illustrative AI-generated image, not documentary evidence of actual Nextgen Tech premises or work. No people or faces. No logos, brand marks, watermarks, readable words, tiny fake text, headings, slogans, performance numbers or fake brand interface. No robots, neon, sparkles, glowing connections, floating objects, random cubes, dramatic color effects or decorative clutter. Deliver one finished high-resolution opaque raster photograph.",
+        "prompt_file": "apps/web/public/images/services/consulting.prompt.txt",
+        "source_path": "C:\\Users\\party\\.codex\\generated_images\\01a1686d-e070-7331-aa58-547e728b1e92\\exec-f54aacc0-336a-4c06-b51b-add6a43713a9.png",
+        "source_sha256": "5521c4d674cabd3d2203944762783e3e393f9991502c19bab157185c0deaf648",
+        "original_retained": true,
+        "output_hint": "Generated images are saved to C:\\Users\\party\\.codex\\generated_images\\01a1686d-e070-7331-aa58-547e728b1e92 as C:\\Users\\party\\.codex\\generated_images\\01a1686d-e070-7331-aa58-547e728b1e92\\exec-f54aacc0-336a-4c06-b51b-add6a43713a9.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+        "image_url_omitted": true,
+        "returned_with_generatedImage": true
+      },
+      "provenance": {
+        "embedded": true,
+        "tool": "Impeccable embed-prompt",
+        "png_text_keyword": "impeccable:prompt",
+        "embedded_prompt_matches_saved_prompt": true,
+        "pixel_transformations": "None; source PNG copied, then prompt text metadata embedded."
+      },
+      "status": "accepted"
+    },
+    {
+      "name": "development",
+      "path": "apps/web/public/images/services/development.png",
+      "absolute_path": "C:\\WORK\\WEBSITE - NEXTGEN TECH\\nextgen tech website\\apps\\web\\public\\images\\services\\development.png",
+      "public_path": "/images/services/development.png",
+      "format": "PNG",
+      "width": 1536,
+      "height": 1024,
+      "aspect_ratio": "3:2",
+      "color_mode": "RGB",
+      "opaque": true,
+      "bytes": 1783508,
+      "sha256": "44d4c4772be56568fd6060d2400a08a25226c0a2ae995718e7c509dfaf14ce44",
+      "concept": "Premium silver laptop and tablet showing an original unbranded business application concept in cream and green.",
+      "alt": "Illustrative laptop and tablet displaying a simple green and cream business application concept.",
+      "disclosure": "AI-generated illustrative image.",
+      "crop_guidance": {
+        "suggested_object_position": "50% 50%",
+        "preferred_aspect_ratios": [
+          "3:2",
+          "16:9"
+        ],
+        "note": "Keep both device screens visible. Centered 3:2 and 16:9 landscape presentations suit the paired-device arrangement; a narrow portrait crop loses the secondary tablet.",
+        "verified_in_page": false
+      },
+      "generation": {
+        "tool": "built-in image_gen.imagegen",
+        "transparent_background": false,
+        "prompt": "Use case: product-mockup\nAsset type: large landscape service photograph for Nextgen Tech's green Anybody/Manrope editorial website, used on a services index and application-development masthead.\nPrimary request: a refined unbranded laptop and tablet product setup demonstrating a simple bespoke business application, with the restraint and material precision of premium technology product photography.\nScene/backdrop: seamless warm cream tabletop and soft cream studio backdrop, a thin muted evergreen felt desk mat grounding the devices, no office scenery.\nSubject: a beautifully proportioned slim brushed-silver laptop open at a natural working angle, and one matching unbranded tablet upright on a discreet low stand beside it. Their crisp screens show a coherent ORIGINAL illustrative business application: warm-white canvas, a very narrow evergreen navigation rail, three clearly ordered work columns containing a few simple cream task cards, small solid green status dots and thin neutral divider lines. The tablet presents the corresponding simple task-detail layout with one green status marker, a few neat form fields and a single understated green action rectangle. Treat all information as clean geometric fields; no written labels, no pseudo-text, no letters or numbers. The two screens feel like views of the same purposeful application, never a wall of invented analytics.\nStyle/medium: photorealistic studio product photograph, crisp machined aluminum, fine matte glass reflections, natural black bezels, realistic keys and hinge, no excessive gloss.\nComposition/framing: landscape 3:2; slightly elevated three-quarter camera, laptop is the clear main subject, tablet secondary, devices close together as one centered group. Entire silhouettes and stands visible. Keep the group within the central 76% of the image with substantial cream margins on all sides and above for responsive cropping. Moderate depth of field keeps both screens and hardware sharp. No website chrome.\nLighting/mood: large diffused daylight, controlled edge highlights and delicate grounded shadows, calm, assured, exacting.\nColor palette: warm cream, evergreen, muted sage, silver and charcoal; restrained saturation.\nConstraints: entirely illustrative AI-generated product and software concept, not a real Nextgen Tech application or client project. No people, faces, logos, brand UI, app names, watermarks, readable text, tiny fake text, headings, slogans, metrics or live counters. No Apple logo, no recognisable third-party software, no phone, no plants, no robot, neon, sparkles, floating elements, random cubes, holograms or ornamental props. Deliver one finished high-resolution opaque raster photograph.",
+        "prompt_file": "apps/web/public/images/services/development.prompt.txt",
+        "source_path": "C:\\Users\\party\\.codex\\generated_images\\01a1686d-e070-7331-aa58-547e728b1e92\\exec-3059863d-1ef9-4155-8a26-cf6a683a9e7a.png",
+        "source_sha256": "981bdf95a7e32d81e524a9a07455c94470f02737d54cb2c9883894e699c5ddac",
+        "original_retained": true,
+        "output_hint": "Generated images are saved to C:\\Users\\party\\.codex\\generated_images\\01a1686d-e070-7331-aa58-547e728b1e92 as C:\\Users\\party\\.codex\\generated_images\\01a1686d-e070-7331-aa58-547e728b1e92\\exec-3059863d-1ef9-4155-8a26-cf6a683a9e7a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+        "image_url_omitted": true,
+        "returned_with_generatedImage": true
+      },
+      "provenance": {
+        "embedded": true,
+        "tool": "Impeccable embed-prompt",
+        "png_text_keyword": "impeccable:prompt",
+        "embedded_prompt_matches_saved_prompt": true,
+        "pixel_transformations": "None; source PNG copied, then prompt text metadata embedded."
+      },
+      "status": "accepted"
+    },
+    {
+      "name": "integration",
+      "path": "apps/web/public/images/services/integration.png",
+      "absolute_path": "C:\\WORK\\WEBSITE - NEXTGEN TECH\\nextgen tech website\\apps\\web\\public\\images\\services\\integration.png",
+      "public_path": "/images/services/integration.png",
+      "format": "PNG",
+      "width": 1536,
+      "height": 1024,
+      "aspect_ratio": "3:2",
+      "color_mode": "RGB",
+      "opaque": true,
+      "bytes": 2009027,
+      "sha256": "c227e4b981ffb2028dae0814a7e7094f949c2321a00321525e7c9ad104a0f2df",
+      "concept": "Laptop connected through a dock to a document scanner, with repeated green workflow stages across operational paper and screen.",
+      "alt": "Illustrative laptop, dock and document scanner connecting paper forms to a digital workflow.",
+      "disclosure": "AI-generated illustrative image.",
+      "crop_guidance": {
+        "suggested_object_position": "50% 50%",
+        "preferred_aspect_ratios": [
+          "3:2",
+          "16:9"
+        ],
+        "note": "Use a wide 3:2 or 16:9 presentation to retain both endpoints and the connecting dock. Avoid narrow portrait crops; the laptop and scanner are spread across the scene.",
+        "verified_in_page": false
+      },
+      "generation": {
+        "tool": "built-in image_gen.imagegen",
+        "transparent_background": false,
+        "prompt": "Use case: product-mockup\nAsset type: large landscape service photograph for Nextgen Tech's green Anybody/Manrope editorial website, used on a services index and workflow-integration masthead.\nPrimary request: a premium, credible desk composition showing a connected operational workflow, using real physical tools and carefully ordered business materials rather than abstract technology symbols.\nScene/backdrop: a warm cream desk with a very subtle pale wood grain, quiet cream studio background, a narrow deep evergreen desk pad.\nSubject: an open unbranded silver laptop, a compact brushed-aluminum USB-C dock beside it, and a small unbranded dark-green desktop document scanner. One clearly visible short graphite cable connects the laptop to the dock, and a second tidy cable connects the dock to the scanner, with believable sockets, bends and contact shadows. The scanner holds a single cream operational form, and two neatly aligned cream job sheets rest beside it. These papers carry simple blank ruled fields and a distinct sequence of three sage status squares with the final square in deep evergreen, without writing. The laptop screen shows an ORIGINAL simple workflow application with the same three-stage green status sequence, one document thumbnail and a small checked completion panel; use clean geometric fields without written labels or pseudo-text. The shared visual pattern across physical paperwork and screen makes the document-to-digital workflow immediately coherent.\nStyle/medium: photorealistic editorial product photograph; precise glass, brushed metal, matte scanner casing, real paper thickness, understated physical realism. A small working system, not an IT showroom.\nComposition/framing: landscape 3:2; elevated three-quarter view, laptop and scanner arranged as one compact central composition, paperwork in the foreground and cables naturally visible. Keep important devices, screens and papers within the central 76% and leave generous cream margins around the scene for responsive crops. Real scale, all objects supported by the desk, no artificial diagram overlays.\nLighting/mood: soft directional studio daylight, nuanced contact shadows, sharp tactile detail, calm connectedness and practical competence.\nColor palette: restrained warm ivory, cream, evergreen and sage, graphite cabling and silver aluminum.\nConstraints: entirely illustrative AI-generated workflow concept, not evidence of a real Nextgen Tech deployment, client project or measured result. No people or faces, no logos, no third-party brand UI, no watermarks, no readable words, fake tiny text, burned-in headings, slogans, numbers or metrics. No random cubes, floating objects, digital connection beams, neon, sparkles, robots, holograms, excessive cables, duplicated devices or decorative clutter. Deliver one finished high-resolution opaque raster photograph.",
+        "prompt_file": "apps/web/public/images/services/integration.prompt.txt",
+        "source_path": "C:\\Users\\party\\.codex\\generated_images\\01a1686d-e070-7331-aa58-547e728b1e92\\exec-6a33855a-7749-4254-be09-37694f2cae0d.png",
+        "source_sha256": "0a0446ea702ef246615793ef24447e88e757094885daa46b4a761e866dbd360e",
+        "original_retained": true,
+        "output_hint": "Generated images are saved to C:\\Users\\party\\.codex\\generated_images\\01a1686d-e070-7331-aa58-547e728b1e92 as C:\\Users\\party\\.codex\\generated_images\\01a1686d-e070-7331-aa58-547e728b1e92\\exec-6a33855a-7749-4254-be09-37694f2cae0d.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+        "image_url_omitted": true,
+        "returned_with_generatedImage": true
+      },
+      "provenance": {
+        "embedded": true,
+        "tool": "Impeccable embed-prompt",
+        "png_text_keyword": "impeccable:prompt",
+        "embedded_prompt_matches_saved_prompt": true,
+        "pixel_transformations": "None; source PNG copied, then prompt text metadata embedded."
+      },
+      "status": "accepted"
+    }
+  ]
+}

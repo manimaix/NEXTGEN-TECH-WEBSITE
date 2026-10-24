@@ -9,6 +9,9 @@ import {
 } from "../../content/services";
 import { PublicAction, PublicFAQ } from "./PublicUI";
 import { WorkflowComparison } from "./WorkflowComparison";
+import { SitePhoto } from "./SiteImages";
+import { serviceImageSlots } from "../../../../packages/contracts/src/site-images";
+import "../styles/service-media.css";
 
 export function ServicePage({ service: s }: { service: ServiceItem }) {
   const title =
@@ -28,11 +31,7 @@ export function ServicePage({ service: s }: { service: ServiceItem }) {
       <>
         Put AI to work.
         <br />
-        <span>
-          Keep people
-          <br />
-          in control.
-        </span>
+        <span>Keep people in control.</span>
       </>
     );
   return (
@@ -45,21 +44,28 @@ export function ServicePage({ service: s }: { service: ServiceItem }) {
         <span aria-hidden="true">/</span>
         <span aria-current="page">{s.title}</span>
       </nav>
-      <section className="public-band public-band-green public-service-hero">
-        <div className="public-wrap public-split">
-          <div>
-            <h1>{title}</h1>
-            <PublicAction to={contactPath(s.id)}>
-              Discuss{" "}
-              {s.id === "ai_agents_integration"
-                ? s.short
-                : s.short.toLowerCase()}
-            </PublicAction>
+      <section className="public-band public-band-green public-service-hero service-media-hero">
+        <div className="public-wrap">
+          <div className="public-split service-media-heading">
+            <div>
+              <h1>{title}</h1>
+              <PublicAction to={contactPath(s.id)}>
+                Discuss{" "}
+                {s.id === "ai_agents_integration"
+                  ? s.short
+                  : s.short.toLowerCase()}
+              </PublicAction>
+            </div>
+            <div className="public-service-statement">
+              <p>{s.description}</p>
+              <p>{s.audience}</p>
+            </div>
           </div>
-          <div className="public-service-statement">
-            <p>{s.description}</p>
-            <p>{s.audience}</p>
-          </div>
+          <SitePhoto
+            slot={serviceImageSlots[s.id]}
+            className="service-hero-photo"
+            eager
+          />
         </div>
       </section>
       <section className="public-wrap public-section public-scope-intro">

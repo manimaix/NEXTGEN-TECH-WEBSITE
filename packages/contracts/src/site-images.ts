@@ -7,7 +7,11 @@ export const imageSlots = [
     page: "/about",
     ratio: "21 / 9",
     hint: "A wide photo of your workplace or your team at work.",
-    placeholder: "about",
+    placeholder: {
+      src: "/images/placeholders/about.webp",
+      width: 1536,
+      height: 1024,
+    },
     alt: "AI-generated illustration of a light-filled technology studio.",
   },
   {
@@ -16,7 +20,11 @@ export const imageSlots = [
     page: "/about#team",
     ratio: "16 / 9",
     hint: "A landscape group photograph of your team.",
-    placeholder: "team",
+    placeholder: {
+      src: "/images/placeholders/team.webp",
+      width: 1536,
+      height: 1024,
+    },
     alt: "AI-generated placeholder showing a fictional team working together.",
   },
   {
@@ -25,7 +33,11 @@ export const imageSlots = [
     page: "/about#team",
     ratio: "4 / 5",
     hint: "A portrait, with space around the person's head and shoulders.",
-    placeholder: "portrait-1",
+    placeholder: {
+      src: "/images/placeholders/portrait-1.webp",
+      width: 800,
+      height: 1000,
+    },
     alt: "AI-generated portrait placeholder; not an actual team member.",
   },
   {
@@ -34,7 +46,11 @@ export const imageSlots = [
     page: "/about#team",
     ratio: "4 / 5",
     hint: "A portrait, with space around the person's head and shoulders.",
-    placeholder: "portrait-2",
+    placeholder: {
+      src: "/images/placeholders/portrait-2.webp",
+      width: 800,
+      height: 1000,
+    },
     alt: "AI-generated portrait placeholder; not an actual team member.",
   },
   {
@@ -43,7 +59,11 @@ export const imageSlots = [
     page: "/about#team",
     ratio: "4 / 5",
     hint: "A portrait, with space around the person's head and shoulders.",
-    placeholder: "portrait-3",
+    placeholder: {
+      src: "/images/placeholders/portrait-3.webp",
+      width: 800,
+      height: 1000,
+    },
     alt: "AI-generated portrait placeholder; not an actual team member.",
   },
   {
@@ -52,11 +72,60 @@ export const imageSlots = [
     page: "/training",
     ratio: "3 / 2",
     hint: "A landscape photo of a training session, with participants' permission.",
-    placeholder: "training",
+    placeholder: {
+      src: "/images/placeholders/training.webp",
+      width: 1536,
+      height: 1024,
+    },
     alt: "AI-generated illustration of a fictional technology workshop.",
+  },
+  {
+    id: "service-consulting",
+    label: "Services · technology consulting",
+    page: "/services/consulting",
+    ratio: "16 / 9",
+    hint: "A landscape image about technology planning. Also appears on What we do. Use the crop controls to keep the subject in view.",
+    placeholder: {
+      src: "/images/services/consulting.png",
+      width: 1536,
+      height: 1024,
+    },
+    alt: "AI-generated illustration of a planning desk with workflow diagrams and a green notebook.",
+  },
+  {
+    id: "service-development",
+    label: "Services · application development",
+    page: "/services/application-development",
+    ratio: "16 / 9",
+    hint: "A landscape image about building software. Also appears on What we do. Use the crop controls to keep the subject in view.",
+    placeholder: {
+      src: "/images/services/development.png",
+      width: 1536,
+      height: 1024,
+    },
+    alt: "AI-generated illustration of a laptop and tablet displaying a fictional business application.",
+  },
+  {
+    id: "service-integration",
+    label: "Services · AI agents & integration",
+    page: "/services/ai-agents-integration",
+    ratio: "16 / 9",
+    hint: "A landscape image about connected AI workflows. Also appears on What we do. Use the crop controls to keep the subject in view.",
+    placeholder: {
+      src: "/images/services/integration.png",
+      width: 1536,
+      height: 1024,
+    },
+    alt: "AI-generated illustration of a connected laptop and document scanner beside workflow sheets.",
   },
 ] as const;
 export type ImageSlotId = (typeof imageSlots)[number]["id"];
+export const serviceImageSlots = {
+  consulting: "service-consulting",
+  application_development: "service-development",
+  ai_agents_integration: "service-integration",
+  ai_training: "training-workshop",
+} as const satisfies Record<string, ImageSlotId>;
 export const imageSlotSchema = z.enum(
   imageSlots.map((slot) => slot.id) as [ImageSlotId, ...ImageSlotId[]],
 );
@@ -106,7 +175,7 @@ export function defaultImage(id: ImageSlotId): SiteImage {
   const portrait = id.startsWith("team-");
   return {
     slot: id,
-    src: `/images/placeholders/${slot.placeholder}.webp`,
+    src: slot.placeholder.src,
     alt: slot.alt,
     caption: "",
     name: portrait ? "Placeholder" : "",
@@ -116,8 +185,8 @@ export function defaultImage(id: ImageSlotId): SiteImage {
     isPlaceholder: true,
     uploaded: false,
     version: 0,
-    width: portrait ? 800 : 1536,
-    height: portrait ? 1000 : 1024,
+    width: slot.placeholder.width,
+    height: slot.placeholder.height,
     updatedAt: null,
   };
 }

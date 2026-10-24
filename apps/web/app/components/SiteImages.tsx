@@ -97,7 +97,9 @@ export function SitePhoto({
         <figcaption>
           {photo.isPlaceholder && (
             <span>
-              AI-generated placeholder
+              {slot.startsWith("service-")
+                ? "AI-generated illustration"
+                : "AI-generated placeholder"}
               {slot.startsWith("team-") || slot === "about-team"
                 ? " · not our actual team"
                 : " · illustrative only"}

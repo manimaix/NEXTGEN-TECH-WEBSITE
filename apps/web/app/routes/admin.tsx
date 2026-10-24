@@ -3,6 +3,7 @@ import { Link, useSearchParams } from "react-router";
 import { ArrowLeft, ArrowUpRight, RefreshCw, LogOut } from "lucide-react";
 import { Wordmark } from "../components/SiteShell";
 import { ImageManager } from "../components/ImageManager";
+import { CourseManager } from "../components/CourseManager";
 import {
   edges,
   serviceNames,
@@ -33,6 +34,8 @@ export default function Admin() {
   const [searchParams, setSearchParams] = useSearchParams();
   const tab = searchParams.get("section") ?? "enquiries";
   const [imageDirty, setImageDirty] = useState(false);
+  const [courseDirty, setCourseDirty] = useState(false);
+  const [courseBusy, setCourseBusy] = useState(false);
   function setTab(value: string) {
     setSearchParams(value === "enquiries" ? {} : { section: value });
   }
@@ -62,8 +65,17 @@ export default function Admin() {
     });
     const b = await r.json();
     if (!r.ok) {
-      if (r.status === 401) setStaff(null);
-      throw Error(b.error?.message ?? "The request could not be completed.");
+      // Keep unsaved course content visible if the session expires during a save.
+      if (r.status === 401 && !path.startsWith("/admin/training-courses"))
+        setStaff(null);
+      throw Object.assign(
+        Error(b.error?.message ?? "The request could not be completed."),
+        {
+          status: r.status,
+          code: b.error?.code,
+          fields: b.error?.fields,
+        },
+      );
     }
     return b;
   }
@@ -159,11 +171,14 @@ export default function Admin() {
           <button
             className="icon-button"
             aria-label="Sign out"
+            disabled={courseBusy}
             onClick={async () => {
               if (
-                imageDirty &&
+                (imageDirty || courseDirty) &&
                 !window.confirm(
-                  "Discard your unsaved image changes and sign out?",
+                  courseDirty
+                    ? "Discard your unsaved course changes and sign out?"
+                    : "Discard your unsaved image changes and sign out?",
                 )
               )
                 return;
@@ -196,8 +211,8 @@ export default function Admin() {
             staff workspace.
           </h1>
           <p>
-            Manage website images, review test enquiries and keep track of
-            follow-ups.
+            Manage training courses and website images, review test enquiries
+            and keep track of follow-ups.
           </p>
           <div className="notice">
             Development access only. This shortcut is restricted to loopback
@@ -227,17 +242,21 @@ export default function Admin() {
                   ? detail.reference
                   : tab === "images"
                     ? "Site images"
-                    : "Enquiry workspace"}
+                    : tab === "training"
+                      ? "Team training"
+                      : "Enquiry workspace"}
               </h1>
               <p>
                 {detail
                   ? "Private enquiry details and follow-up history."
                   : tab === "images"
                     ? "Your photos, in the right places. Preview and publish each change."
-                    : "Local records. No external email provider connected."}
+                    : tab === "training"
+                      ? "Your courses, kept current. Draft, publish and organise the catalogue."
+                      : "Local records. No external email provider connected."}
               </p>
             </div>
-            {tab !== "images" && (
+            {tab !== "images" && tab !== "training" && (
               <button
                 className="text-link icon-button"
                 onClick={() => (detail ? void open(detail.id) : void list())}
@@ -410,6 +429,12 @@ export default function Admin() {
                   Site images
                 </button>
                 <button
+                  aria-pressed={tab === "training"}
+                  onClick={() => setTab("training")}
+                >
+                  Team training
+                </button>
+                <button
                   aria-pressed={tab === "enquiries"}
                   onClick={() => setTab("enquiries")}
                 >
@@ -424,6 +449,12 @@ export default function Admin() {
               </nav>
               {tab === "images" ? (
                 <ImageManager request={request} onDirtyChange={setImageDirty} />
+              ) : tab === "training" ? (
+                <CourseManager
+                  request={request}
+                  onDirtyChange={setCourseDirty}
+                  onBusyChange={setCourseBusy}
+                />
               ) : tab === "enquiries" ? (
                 leads.length ? (
                   <>
